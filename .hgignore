@@ -1,0 +1,12 @@
+syntax: glob
+
+.DS_Store
+*.swp
+*~.nib
+
+build
+Documentation/Doxygen
+
+*.pbxuser
+*.perspective
+*.perspectivev3

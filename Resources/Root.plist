@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Test settings</string>
+	<key>TitleKey</key>
+	<string>title</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Name</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>DefaultValue</key>
+			<string>Test settings</string>
+			<key>Key</key>
+			<string>title</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string></string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Cool?</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>isCool</string>
+			<key>Hidden</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Time</string>
+			<key>Type</key>
+			<string>TimeInterval</string>
+			<key>DefaultValue</key>
+			<integer>4</integer>
+			<key>Key</key>
+			<string>timeinterval</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Integer</string>
+			<key>Type</key>
+			<string>Integer</string>
+			<key>MinValue</key>
+			<integer>1</integer>
+			<key>MaxValue</key>
+			<integer>200</integer>
+			<key>DefaultValue</key>
+			<integer>10</integer>
+			<key>FormatString</key>
+			<string>%@ Mississippi</string>
+			<key>Key</key>
+			<string>countOfMississippis</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>New section</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>A number</string>
+			<key>Type</key>
+			<string>Integer</string>
+			<key>MinValue</key>
+			<integer>10</integer>
+			<key>MaxValue</key>
+			<integer>20</integer>
+			<key>DefaultValue</key>
+			<integer>2</integer>
+			<key>Key</key>
+			<string>number</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Indented</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>DefaultValue</key>
+			<string>Edit this text</string>
+			<key>IndentLevel</key>
+			<integer>2</integer>
+			<key>Key</key>
+			<string>indented</string>
+		</dict>
+	</array>
+</dict>
+</plist>
