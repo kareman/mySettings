@@ -13,8 +13,8 @@
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		BA15E9E00F65825900EFE7A1 /* LabeledPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E9DF0F65825900EFE7A1 /* LabeledPickerView.m */; };
+		BA2BD6CD0F6EB23800B152D1 /* SettingsCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC97FC80F6165D500CD3E94 /* SettingsCell.h */; };
 		BA2F3B6C0F6B4270003E266B /* mySettingsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F3B6B0F6B4270003E266B /* mySettingsAppDelegate.m */; };
-		BA2F3CFF0F6B42D6003E266B /* mySettings_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = BA2F3CFE0F6B42D6003E266B /* mySettings_Prefix.pch */; };
 		BA4B7E2D0F69B87000BC932F /* TextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE687E20F603B98002E9B47 /* TextfieldCell.m */; };
 		BA4B7E2E0F69B87000BC932F /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC97FC90F6165D500CD3E94 /* SettingsCell.m */; };
 		BA4B7E2F0F69B87000BC932F /* NumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC980540F617BEE00CD3E94 /* NumberCell.m */; };
@@ -29,7 +29,6 @@
 		BA4B7E4E0F69B8BC00BC932F /* SettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEB547F0F5DEC990093BF1B /* SettingsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA4B7E500F69B9D200BC932F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		BA7A4E760F5C7794009B40A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA7A4E750F5C7794009B40A5 /* Settings.bundle */; };
-		BABC18FD0F6C081800B22382 /* IntegerPickerView.h in Headers */ = {isa = PBXBuildFile; fileRef = BABC18FB0F6C081800B22382 /* IntegerPickerView.h */; };
 		BABC18FE0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BABC18FF0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BAC97FCA0F6165D500CD3E94 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC97FC90F6165D500CD3E94 /* SettingsCell.m */; };
@@ -57,7 +56,7 @@
 		BA2F3B690F6B4270003E266B /* mySettingsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySettingsAppDelegate.h; sourceTree = "<group>"; };
 		BA2F3B6B0F6B4270003E266B /* mySettingsAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = mySettingsAppDelegate.m; sourceTree = "<group>"; };
 		BA2F3CFE0F6B42D6003E266B /* mySettings_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySettings_Prefix.pch; sourceTree = SOURCE_ROOT; };
-		BA300E930F69C60200A2CC32 /* libmySettings_lib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmySettings_lib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA300E930F69C60200A2CC32 /* libmySettings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmySettings.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA7A4E750F5C7794009B40A5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		BABC18FB0F6C081800B22382 /* IntegerPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntegerPickerView.h; sourceTree = "<group>"; };
 		BABC18FC0F6C081800B22382 /* IntegerPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntegerPickerView.m; sourceTree = "<group>"; };
@@ -108,7 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* mySettings.app */,
-				BA300E930F69C60200A2CC32 /* libmySettings_lib.a */,
+				BA300E930F69C60200A2CC32 /* libmySettings.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -212,10 +211,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2BD6CD0F6EB23800B152D1 /* SettingsCell.h in Headers */,
 				BA4B7E4D0F69B8BC00BC932F /* SettingsMetadataSource.h in Headers */,
 				BA4B7E4E0F69B8BC00BC932F /* SettingsViewController.h in Headers */,
-				BA2F3CFF0F6B42D6003E266B /* mySettings_Prefix.pch in Headers */,
-				BABC18FD0F6C081800B22382 /* IntegerPickerView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,7 +251,7 @@
 			);
 			name = mySettings;
 			productName = mySettings_lib;
-			productReference = BA300E930F69C60200A2CC32 /* libmySettings_lib.a */;
+			productReference = BA300E930F69C60200A2CC32 /* libmySettings.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -376,7 +374,7 @@
 				GCC_PREFIX_HEADER = mySettings_Prefix.pch;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				PRODUCT_NAME = mySettings_lib;
+				PRODUCT_NAME = mySettings;
 			};
 			name = Debug;
 		};
@@ -388,9 +386,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PREFIX_HEADER = mySettings_Prefix.pch;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				PRODUCT_NAME = mySettings_lib;
+				PRODUCT_NAME = mySettings;
 				ZERO_LINK = NO;
 			};
 			name = Release;
