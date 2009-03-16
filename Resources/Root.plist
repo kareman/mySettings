@@ -80,7 +80,7 @@
 			<key>MaxValue</key>
 			<integer>20</integer>
 			<key>DefaultValue</key>
-			<integer>2</integer>
+			<integer>15</integer>
 			<key>Key</key>
 			<string>number</string>
 		</dict>
