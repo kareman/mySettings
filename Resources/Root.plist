@@ -12,13 +12,29 @@
 	<array>
 		<dict>
 			<key>Title</key>
-			<string>Name</string>
+			<string>Pretty long title</string>
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>DefaultValue</key>
 			<string>Test settings</string>
 			<key>Key</key>
 			<string>title</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Shorter title</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Key</key>
+			<string>title2</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Short</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Key</key>
+			<string>title2</string>
 		</dict>
 		<dict>
 			<key>Title</key>
@@ -50,7 +66,7 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Integer</string>
+			<string>Integer Integer</string>
 			<key>Type</key>
 			<string>Integer</string>
 			<key>MinValue</key>

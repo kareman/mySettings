@@ -66,7 +66,9 @@
 			 even those values that aren't changed by the user. */
 			NSString *key = [item valueForKey:@"Key"];
 			if (![settings valueForKey:key])
-				[settings setValue:[item valueForKey:@"DefaultValue"] forKey:key];
+				[settings setValue:
+				 ([item valueForKey:@"DefaultValue"] ? [item valueForKey:@"DefaultValue"] : @"")
+							forKey:key];
 		}
 		
 	}

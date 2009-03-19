@@ -48,7 +48,7 @@
 		
 		if(hastitlelabel) {
 			// set up label for titles
-			titlelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 80, 0)];
+			titlelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 0, 0)];
 			titlelabel.textAlignment = UITextAlignmentLeft;
 			
 			UIFont *font = [UIFont boldSystemFontOfSize:17];
@@ -90,7 +90,7 @@
  
  Only affects the height, width and vertical location of the value view if those are set to zero.
  Sets the height of the value view to the height of the cell if it's not already set, and centers the value view vertically if position is not already set.
- Stretches it out from the title label to the right edge of the cell if the width is not set. If it is set, just aligns it to the right side of the cell.
+ Stretches it out from the title label to the right edge of the cell if the width is not set, but if there's a title label the value view starts at minimum 80 px. If it is set, just aligns it to the right side of the cell.
  */
 - (void) layoutSubviews {
 	[super layoutSubviews];
@@ -100,15 +100,21 @@
 	
 	if (titlelabel) {
 		titleframe = titlelabel.frame;
+		titleframe.size.width = [titlelabel.text sizeWithFont:titlelabel.font].width;
 		titleframe.size.height = self.contentView.frame.size.height;
 		titlelabel.frame = titleframe;
-	} else
-		titleframe = CGRectMake(10, 0, 0, 0); 
+	}
 	
 	valueframe = valueview.frame;
 	
 	if (valueframe.size.width == 0) {
-		valueframe.origin.x = titleframe.origin.x + titleframe.size.width;
+		if (!titlelabel)
+			valueframe.origin.x = 10;
+		else {
+			valueframe.origin.x = titleframe.origin.x + titleframe.size.width + 10;
+			if (valueframe.origin.x < 80)
+				valueframe.origin.x = 80;
+		}
 		valueframe.size.width = self.contentView.frame.size.width - valueframe.origin.x - rightmargin;
 	} else {
 		valueframe.origin.x = self.contentView.frame.size.width - (valueframe.size.width + rightmargin);
