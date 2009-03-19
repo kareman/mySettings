@@ -31,13 +31,6 @@
 	sectiontitles = [NSMutableArray arrayWithCapacity:5];
 	[sectiontitles retain];
 	
-	// get the title of the preferences
-	if ([rootofplist valueForKey:@"TitleKey"])
-		title = [settings valueForKey:[rootofplist valueForKey:@"TitleKey"]];
-		// @todo add observer to update title when settings.[rootofplist valueForKey:@"Titlekey"] changes.
-	else
-		title = [rootofplist valueForKey:@"Title"];
-	
 	// get the preference items, both sections and rows
 	NSArray *preferenceitems = (NSArray *) [rootofplist valueForKey:@"PreferenceSpecifiers"];
 	
@@ -66,12 +59,20 @@
 			 even those values that aren't changed by the user. */
 			NSString *key = [item valueForKey:@"Key"];
 			if (![settings valueForKey:key])
+				/* set value to an empty string if it's not already defined */
 				[settings setValue:
 				 ([item valueForKey:@"DefaultValue"] ? [item valueForKey:@"DefaultValue"] : @"")
 							forKey:key];
 		}
 		
 	}
+	
+	// get the title of the preferences
+	if ([rootofplist valueForKey:@"TitleKey"])
+		title = [settings valueForKey:[rootofplist valueForKey:@"TitleKey"]];
+	// @todo add observer to update title when settings.[rootofplist valueForKey:@"Titlekey"] changes.
+	else
+		title = [rootofplist valueForKey:@"Title"];	
 	
 }
 
