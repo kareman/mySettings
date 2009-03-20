@@ -48,7 +48,7 @@
 		
 		if(hastitlelabel) {
 			// set up label for titles
-			titlelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 0, 0)];
+			titlelabel = [[UILabel alloc] initWithFrame:CGRectZero];
 			titlelabel.textAlignment = UITextAlignmentLeft;
 			
 			UIFont *font = [UIFont boldSystemFontOfSize:17];
@@ -96,32 +96,53 @@
 	[super layoutSubviews];
 	
 	CGRect valueframe, titleframe;
+	
+	// less margin is needed if there is a cell accessory.
 	CGFloat rightmargin = (self.accessoryType == UITableViewCellAccessoryNone ? 10 : 3);
 	
+	// set up the title label, if it exists.
 	if (titlelabel) {
 		titleframe = titlelabel.frame;
+		titleframe.origin.x = 10;
+		
+		// resize label to fit content
 		titleframe.size.width = [titlelabel.text sizeWithFont:titlelabel.font].width;
 		titleframe.size.height = self.contentView.frame.size.height;
+		
 		titlelabel.frame = titleframe;
 	}
 	
 	valueframe = valueview.frame;
 	
+	// set the width of the value view, if not already set by a subclass.
 	if (valueframe.size.width == 0) {
+		
+		// if title label doesn't exists, let the value view span the entire cell.
 		if (!titlelabel)
 			valueframe.origin.x = 10;
 		else {
+			// let the value view start 10 pixels to the right of the title label 
 			valueframe.origin.x = titleframe.origin.x + titleframe.size.width + 10;
+			
+			// ... but no less than 80 pixels from the left side of the cell.
 			if (valueframe.origin.x < 80)
 				valueframe.origin.x = 80;
 		}
+		
+		// let the value view go all the way to the right side of the cell.
 		valueframe.size.width = self.contentView.frame.size.width - valueframe.origin.x - rightmargin;
-	} else {
+	} 
+	
+	//  the width of the value view has been set by a subclass, so just align it to the right.
+	else {
 		valueframe.origin.x = self.contentView.frame.size.width - (valueframe.size.width + rightmargin);
 	}
 	
+	// if not already set, make value view span the entire height of the cell 
 	if (valueframe.size.height == 0)
 		valueframe.size.height = self.contentView.frame.size.height;
+	/* if vertical alignment is not set and the height was not just set to the height of the cell,
+	   center the value view vertically. */
 	else if (valueframe.origin.y == 0 )
 		valueframe.origin.y = (self.contentView.frame.size.height - valueframe.size.height) / 2;
 	
