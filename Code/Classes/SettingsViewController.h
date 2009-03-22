@@ -14,7 +14,7 @@
 
 
 /**
-The standard full-sized settings view.
+The standard full-screen settings view.
  */
 @interface SettingsViewController : UITableViewController {
 	SettingsMetadataSource *settingsdatasource;
