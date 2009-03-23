@@ -150,6 +150,7 @@
 - (void) showEditorForCell:(SettingsCell *) cell {
 	SettingsEditorViewController *vc = [[SettingsEditorViewController alloc] initWithCell:cell];
 	[viewcontroller.navigationController pushViewController:vc animated:YES];
+	vc.view.backgroundColor = viewcontroller.view.backgroundColor;
 	[vc release];
 }
 

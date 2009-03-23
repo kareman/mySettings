@@ -33,23 +33,23 @@
 }
 
 #pragma mark View
-
+ 
 - (void) loadView {
     [super loadView];
-	// @todo: set background colour to the same as the settings view
-	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
 	
+	// the area below the navigation bar 
 	CGRect visibleframe = self.view.frame;
 	visibleframe.size.height = visibleframe.size.height - self.navigationController.navigationBar.frame.size.height;
 	visibleframe.origin.y = 0;
 	
+	// place editor view at the bottom
 	UIView *editorview = cell.editorview;
 	CGRect editorframe = editorview.frame;
 	editorframe.origin.y = (visibleframe.size.height - editorframe.size.height);
 	editorview.frame = editorframe;
 	[self.view addSubview:editorview];
 	
-	
+	// frame the table view
 	CGRect tableframe = visibleframe;	
 	// give table view the smallest height possible
 	tableframe.size.height = 21 + cell.frame.size.height;

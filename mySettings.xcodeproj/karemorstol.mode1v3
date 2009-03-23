@@ -277,8 +277,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
-									<integer>2</integer>
+									<integer>18</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -321,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SettingsViewController.h</string>
+								<string>SettingsViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,35 +328,42 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SettingsViewController.h</string>
+										<string>SettingsViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>BAD266840F76C0EF00C822B7</string>
+										<string>BAD266BD0F772B2D00C822B7</string>
 										<key>history</key>
 										<array>
-											<string>BA2BD6C10F6EB1EF00B152D1</string>
-											<string>BA2E90DA0F6F3A4D0097593C</string>
-											<string>BA3A4B580F72911D006816B9</string>
 											<string>BA3A4BB30F7332B0006816B9</string>
 											<string>BA3A4BB40F7332B0006816B9</string>
-											<string>BA3A4BB50F7332B0006816B9</string>
 											<string>BA3A4BB60F7332B0006816B9</string>
 											<string>BA3A4BB70F7332B0006816B9</string>
 											<string>BA3A4BB80F7332B0006816B9</string>
-											<string>BA3A4BC60F7332B0006816B9</string>
+											<string>BAD266AA0F772B1A00C822B7</string>
+											<string>BAD266AB0F772B1A00C822B7</string>
+											<string>BAD266AC0F772B1A00C822B7</string>
+											<string>BAD266AD0F772B1A00C822B7</string>
+											<string>BAD266AE0F772B1A00C822B7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>BABC191F0F6C1A8E00B22382</string>
 											<string>BA2BD6B00F6EB0DA00B152D1</string>
-											<string>BA2BD6C30F6EB1EF00B152D1</string>
-											<string>BA2BD6C40F6EB1EF00B152D1</string>
-											<string>BA3A4B5A0F72911D006816B9</string>
 											<string>BA3A4BBA0F7332B0006816B9</string>
 											<string>BA3A4BBB0F7332B0006816B9</string>
 											<string>BA3A4BC10F7332B0006816B9</string>
 											<string>BA3A4BC30F7332B0006816B9</string>
+											<string>BAD266AF0F772B1A00C822B7</string>
+											<string>BAD266B00F772B1A00C822B7</string>
+											<string>BAD266B10F772B1A00C822B7</string>
+											<string>BAD266B20F772B1A00C822B7</string>
+											<string>BAD266B30F772B1A00C822B7</string>
+											<string>BAD266B40F772B1A00C822B7</string>
+											<string>BAD266B50F772B1A00C822B7</string>
+											<string>BAD266B60F772B1A00C822B7</string>
+											<string>BAD266B70F772B1A00C822B7</string>
+											<string>BAD266B80F772B1A00C822B7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -551,12 +557,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>BAD2668F0F76C0EF00C822B7</string>
+		<string>BAD266BA0F772B1A00C822B7</string>
+		<string>BAD266BB0F772B1A00C822B7</string>
 		<string>BAD266900F76C0EF00C822B7</string>
 		<string>BA7A4E990F5C87FF009B40A5</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/karemorstol/Programmering/XCode/mySettings/mysettings/mySettings.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/karemorstol/Programmering/XCode/mySettings/mysettings/mySettings.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>3 114 1106 1064 0 0 1920 1178 </string>
