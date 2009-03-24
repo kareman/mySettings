@@ -19,7 +19,15 @@
 
 @synthesize configuration, changedsettings, value;
 
-+ (id) cellFromSettingsType:(NSString *)settingstype {
++ (id) cellFromConfiguration:(NSDictionary *)configuration {
+	NSString *settingstype = [configuration objectForKey:@"Type"];
+	
+	if ([settingstype isEqualToString:@"Custom"]) {
+		NSString *customcellname = [configuration objectForKey:@"CustomCell"];
+		Class customcell = [[NSBundle mainBundle] classNamed:customcellname];
+		return [[[customcell alloc] initWithReuseIdentifier:customcellname] autorelease];
+	}				
+	
 	if ([settingstype isEqualToString:@"PSTextFieldSpecifier"]) 
 		return [[[TextfieldCell alloc] initWithReuseIdentifier:settingstype] autorelease];
 	

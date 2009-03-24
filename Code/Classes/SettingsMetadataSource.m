@@ -130,10 +130,13 @@
 	
 	NSDictionary *configuration = [self configurationAtIndexPath:indexPath];
 	NSString *settingstype = [configuration valueForKey:@"Type"];
+	NSString *identifier = ([settingstype isEqualToString:@"Custom"] 
+							? [configuration objectForKey:@"CustomCell"] 
+							: settingstype);
 		
-	SettingsCell *cell = (SettingsCell *)[tableView dequeueReusableCellWithIdentifier:settingstype];
+	SettingsCell *cell = (SettingsCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
 	if (cell == nil) {
-		cell = [SettingsCell cellFromSettingsType:settingstype];
+		cell = [SettingsCell cellFromConfiguration:configuration];
 		cell.changedsettings = changedsettings;
 	}
 	

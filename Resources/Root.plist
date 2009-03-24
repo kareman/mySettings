@@ -22,11 +22,13 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Shorter title</string>
+			<string>Custom cells can do what they want</string>
 			<key>Type</key>
-			<string>PSTextFieldSpecifier</string>
+			<string>Custom</string>
 			<key>Key</key>
 			<string>title2</string>
+			<key>CustomCell</key>
+			<string>TestCustomCell</string>
 		</dict>
 		<dict>
 			<key>Title</key>

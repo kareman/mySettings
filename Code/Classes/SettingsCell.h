@@ -49,7 +49,7 @@
  
  @param settingstype The type of setting.
  */
-+ (id) cellFromSettingsType:(NSString *)settingstype;
++ (id) cellFromConfiguration:(NSDictionary *)configuration;
 
 /** The main init method. All subclasses must implement it. */
 - (id) initWithReuseIdentifier:(NSString *)reuseIdentifier;
