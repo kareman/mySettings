@@ -277,7 +277,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
+									<integer>5</integer>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>TestCustomCell.m</string>
+								<string>SettingsCell.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,14 +329,13 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>TestCustomCell.m</string>
+										<string>SettingsCell.h</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>BA319EDB0F79824F00121BB9</string>
+										<string>BA319F290F798EAB00121BB9</string>
 										<key>history</key>
 										<array>
-											<string>BA319E8F0F797A9F00121BB9</string>
 											<string>BA319EBD0F7981B600121BB9</string>
 											<string>BA319EBE0F7981B600121BB9</string>
 											<string>BA319EBF0F7981B600121BB9</string>
@@ -344,12 +343,9 @@
 											<string>BA319EC10F7981B600121BB9</string>
 											<string>BA319EC20F7981B600121BB9</string>
 											<string>BA319EC30F7981B600121BB9</string>
-											<string>BA319ED40F79820D00121BB9</string>
-											<string>BA319ED50F79820D00121BB9</string>
-										</array>
-										<key>nextStack</key>
-										<array>
-											<string>BA319ED60F79820D00121BB9</string>
+											<string>BA319F210F798EA000121BB9</string>
+											<string>BA319F220F798EA000121BB9</string>
+											<string>BA319E8F0F797A9F00121BB9</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -374,6 +370,10 @@
 											<string>BA319ECD0F7981B600121BB9</string>
 											<string>BA319ECE0F7981B600121BB9</string>
 											<string>BA319ECF0F7981B600121BB9</string>
+											<string>BA319F230F798EA000121BB9</string>
+											<string>BA319F240F798EA000121BB9</string>
+											<string>BA319F250F798EA000121BB9</string>
+											<string>BA319F260F798EA000121BB9</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -567,14 +567,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>BA319EDC0F79824F00121BB9</string>
 		<string>BA319EA10F797A9F00121BB9</string>
 		<string>BA319EA20F797A9F00121BB9</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>BA7A4E990F5C87FF009B40A5</string>
 		<string>BAEB545C0F5DCDE50093BF1B</string>
-		<string>/Users/karemorstol/Programmering/XCode/mySettings/mysettings-custom-cell/mySettings.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>/Users/karemorstol/Programmering/XCode/mySettings/mysettings-custom-cell/mySettings.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>3 114 1106 1064 0 0 1920 1178 </string>

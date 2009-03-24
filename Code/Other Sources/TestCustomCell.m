@@ -15,6 +15,7 @@
         // Initialization code
 		titlelabel.textAlignment = UITextAlignmentCenter;
 		titlelabel.font = [UIFont systemFontOfSize:10];
+		
     }
     return self;
 }
