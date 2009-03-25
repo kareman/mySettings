@@ -9,6 +9,7 @@
  *    Kåre Morstøl (NotTooBad Software) - initial API and implementation
  *******************************************************************************/ 
 
+/** All custom cells must implement this protocol. */
 @protocol SettingsCellProtocol
 
 @required

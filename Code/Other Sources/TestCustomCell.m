@@ -17,7 +17,6 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier]) {
-        // Initialization code
 		label = [[UILabel alloc] initWithFrame:CGRectZero];
 		label.textAlignment = UITextAlignmentCenter;
 		label.font = [UIFont systemFontOfSize:10];
@@ -28,7 +27,7 @@
 
 - (void)dealloc {
     [super dealloc];
-	[label release];		
+	[label release];
 }
 
 - (void) layoutSubviews {

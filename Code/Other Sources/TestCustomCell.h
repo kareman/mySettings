@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import "SettingsCellProtocol.h"
 
+/** A test for custom cells. Not part of the library. */
 @interface TestCustomCell : UITableViewCell <SettingsCellProtocol> {
 	UILabel *label;
 	

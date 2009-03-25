@@ -19,11 +19,11 @@
 	self.title = settingsdatasource.title;
 	settingsdatasource.viewcontroller = self;
 	
-	/* selectors are fake
-	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:settingsdatasource action:@selector(save:)];
+	/* NB: selectors are fake*/
+/*	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:settingsdatasource action:@selector(save:)];
 	
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:settingsdatasource action:@selector(save:)];
-	*/
+*/
 }
 
 - (id)initWithConfigFile:(NSString *)configfile {
