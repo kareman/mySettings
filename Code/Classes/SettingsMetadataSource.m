@@ -12,6 +12,7 @@
 #import "SettingsMetadataSource.h"
 #import	"SettingsCell.h"
 #import "SettingsEditorViewController.h"
+#import "SettingsCellProtocol.h"
 
 @implementation SettingsMetadataSource
 
@@ -134,7 +135,8 @@
 							? [configuration objectForKey:@"CustomCell"] 
 							: settingstype);
 		
-	SettingsCell *cell = (SettingsCell *)[tableView dequeueReusableCellWithIdentifier:identifier];
+	UITableViewCell<SettingsCellProtocol> *cell = 
+		(UITableViewCell<SettingsCellProtocol> *)[tableView dequeueReusableCellWithIdentifier:identifier];
 	if (cell == nil) {
 		cell = [SettingsCell cellFromConfiguration:configuration];
 		cell.changedsettings = changedsettings;

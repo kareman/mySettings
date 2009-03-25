@@ -9,15 +9,21 @@
  *    Kåre Morstøl (NotTooBad Software) - initial API and implementation
  *******************************************************************************/ 
 
-#import <Foundation/Foundation.h>
-#import "SettingsCellProtocol.h"
+@protocol SettingsCellProtocol
 
-@interface TestCustomCell : UITableViewCell <SettingsCellProtocol> {
-	UILabel *label;
-	
-	NSObject *value;
-	NSDictionary *configuration;			
-	NSMutableDictionary *changedsettings;	
-}
+@required
+
+/** The configuration of the cell, taken from the plist */
+@property (nonatomic, assign) NSDictionary *configuration;			
+
+/** Cache for unsaved changes to settings */
+@property (nonatomic, assign) NSMutableDictionary *changedsettings;
+
+/** The current value of this setting */
+@property (nonatomic, retain) NSObject *value;
+
+/** The main init method. All subclasses must implement it. */
+- (id) initWithReuseIdentifier:(NSString *)reuseIdentifier;
+
 
 @end

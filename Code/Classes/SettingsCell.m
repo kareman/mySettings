@@ -40,7 +40,7 @@
 	if ([settingstype isEqualToString:@"PSToggleSwitchSpecifier"])
 		return [[[ToggleSwitchCell alloc] initWithReuseIdentifier:settingstype] autorelease];
 	
-	NSAssert(FALSE, @"not implemented");
+	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;
 	//return [[[self alloc] initWithValuelabelAndReuseIdentifier:@"SettingsCell"] autorelease];
 }
@@ -52,16 +52,14 @@
 
 - (id)initWithTitlelabel:(BOOL)hastitlelabel reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier]) {
-        // Initialization code
-		
 		if(hastitlelabel) {
 			// set up label for titles
 			titlelabel = [[UILabel alloc] initWithFrame:CGRectZero];
 			titlelabel.textAlignment = UITextAlignmentLeft;
 			
 			UIFont *font = [UIFont boldSystemFontOfSize:17];
-			titlelabel.textColor = [UIColor blackColor];
 			titlelabel.font = font;
+			titlelabel.textColor = [UIColor blackColor];
 			
 			[self.contentView addSubview:titlelabel];
 		}
@@ -77,8 +75,6 @@
 		UIFont *font = [UIFont systemFontOfSize:17];
 		
 		valuelabel.textColor = [UIColor colorWithRed:0.192157 green:0.309804 blue:0.521569 alpha:1.0];
-		//valuelabel.shadowColor = [UIColor colorWithRed:0.356863 green:0.447059 blue:0.615686 alpha:1.0];
-		//valuelabel.shadowOffset = CGSizeMake(0,-1);
 		valuelabel.font = font;
 		
 		[self.contentView addSubview:valuelabel];

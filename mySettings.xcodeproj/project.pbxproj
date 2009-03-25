@@ -12,6 +12,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */; };
 		BA15E9E00F65825900EFE7A1 /* LabeledPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E9DF0F65825900EFE7A1 /* LabeledPickerView.m */; };
 		BA2BD6CD0F6EB23800B152D1 /* SettingsCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC97FC80F6165D500CD3E94 /* SettingsCell.h */; };
 		BA2F3B6C0F6B4270003E266B /* mySettingsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F3B6B0F6B4270003E266B /* mySettingsAppDelegate.m */; };
@@ -52,6 +53,7 @@
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCellProtocol.h; sourceTree = "<group>"; };
 		BA15E9DE0F65825900EFE7A1 /* LabeledPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledPickerView.h; sourceTree = "<group>"; };
 		BA15E9DF0F65825900EFE7A1 /* LabeledPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabeledPickerView.m; sourceTree = "<group>"; };
 		BA2F3B690F6B4270003E266B /* mySettingsAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mySettingsAppDelegate.h; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				BAC9811C0F61B77100CD3E94 /* TimeIntervalCell.m */,
 				BAC981630F61CA6500CD3E94 /* ToggleSwitchCell.h */,
 				BAC981640F61CA6500CD3E94 /* ToggleSwitchCell.m */,
+				BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				BA2BD6CD0F6EB23800B152D1 /* SettingsCell.h in Headers */,
 				BA4B7E4D0F69B8BC00BC932F /* SettingsMetadataSource.h in Headers */,
 				BA4B7E4E0F69B8BC00BC932F /* SettingsViewController.h in Headers */,
+				BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

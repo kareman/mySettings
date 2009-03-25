@@ -10,6 +10,7 @@
  *******************************************************************************/ 
 
 #import <UIKit/UIKit.h>
+#import "SettingsCellProtocol.h"
 
 /**
  Superclass for all cells in the settings view.
@@ -18,7 +19,7 @@
  Optionally sets up the title label.
  */
  
-@interface SettingsCell : UITableViewCell {
+@interface SettingsCell : UITableViewCell <SettingsCellProtocol> {
 	UILabel *titlelabel;	/**< The optional title label */
 	UILabel *valuelabel;	/**< The optional value label */
 	UIView *valueview;		/**< Points to either the value label or a view implemented by subclasses */
@@ -28,15 +29,6 @@
 	NSMutableDictionary *changedsettings;
 	
 }
-
-/** The configuration of the cell, taken from the plist */
-@property (nonatomic, assign) NSDictionary *configuration;			
-
-/** Cache for unsaved changes to settings */
-@property (nonatomic, assign) NSMutableDictionary *changedsettings;
-
-/** The current value of this setting */
-@property (nonatomic, retain) NSObject *value;
 
 /** 
  The editor for this cell.
@@ -50,9 +42,6 @@
  @param settingstype The type of setting.
  */
 + (id) cellFromConfiguration:(NSDictionary *)configuration;
-
-/** The main init method. All subclasses must implement it. */
-- (id) initWithReuseIdentifier:(NSString *)reuseIdentifier;
 
 /** 
  Sets up the title label. Or not. 
