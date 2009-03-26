@@ -69,7 +69,7 @@
 // tell the picker the width of each row for a given component
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
 {
-	return 80;
+	return 60;
 }
 
 

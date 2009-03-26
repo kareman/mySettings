@@ -40,6 +40,7 @@
 - (UIView *) editorview {
 	IntegerPickerView *editorview = [[IntegerPickerView alloc] init];
 	editorview.showsSelectionIndicator = YES;
+//	[editorview addLabel:<#(NSString *)labeltext#> forComponent:<#(NSUInteger)component#>
 	
 	// set the picker view to show the current number
 	editorview.minimumValue = [(NSNumber *)[configuration valueForKey:@"MinValue"] intValue];

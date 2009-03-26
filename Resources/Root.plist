@@ -68,7 +68,7 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Integer Integer</string>
+			<string>Integer w/ text</string>
 			<key>Type</key>
 			<string>Integer</string>
 			<key>MinValue</key>
@@ -90,7 +90,7 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>A number</string>
+			<string>Just an integer</string>
 			<key>Type</key>
 			<string>Integer</string>
 			<key>MinValue</key>

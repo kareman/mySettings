@@ -38,6 +38,8 @@
 	LabeledPickerView *editorview = [[LabeledPickerView alloc] init];
 	editorview.delegate = self;
 	editorview.showsSelectionIndicator = YES;
+	[editorview addLabel:@"min" forComponent:0];
+	[editorview addLabel:@"secs" forComponent:1];
 	
 	// set the picker view to show the current time interval
 	int wholeseconds = round(((NSNumber *) self.value).intValue);
@@ -95,10 +97,10 @@
 {
 	switch (component) {
 		case 0:
-			return 60;
+			return 78;
 			break;
 		case 1:
-			return 60;
+			return 87;
 			break;
 	}
 	

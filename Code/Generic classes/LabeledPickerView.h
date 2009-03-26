@@ -11,8 +11,11 @@
 
 #import <Foundation/Foundation.h>
 
+/** A picker view with labels under the selectionIndicator view */
 @interface LabeledPickerView : UIPickerView {
-
+	NSMutableDictionary *labels;
 }
+
+- (void) addLabel:(NSString *)labeltext forComponent:(NSUInteger)component;
 
 @end
