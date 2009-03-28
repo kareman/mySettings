@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				BAEB543A0F5DC20D0093BF1B /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				BAEB543D0F5DC3700093BF1B /* Generic classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
