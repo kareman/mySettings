@@ -65,7 +65,11 @@
 		label.backgroundColor = [UIColor clearColor];
 		label.shadowColor = [UIColor whiteColor];
 		label.shadowOffset = CGSizeMake(0,1);
-		[self insertSubview:label aboveSubview:[self.subviews objectAtIndex:5*(component+1)]];
+		
+		if (self.showsSelectionIndicator)
+			[self insertSubview:label aboveSubview:[self.subviews objectAtIndex:5*(component+1)]];
+		else
+			[self addSubview:label];
 	}
 	
 }
