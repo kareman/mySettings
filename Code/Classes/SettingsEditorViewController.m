@@ -60,11 +60,13 @@
 	UITableView *tableView = [[UITableView alloc] initWithFrame:tableframe style:UITableViewStyleGrouped];
 	tableView.delegate = self;
 	tableView.dataSource = self;
-	tableView.scrollEnabled = FALSE;
+	tableView.scrollEnabled = NO;
+    tableView.tag = 666;
 	tableView.backgroundColor = [UIColor clearColor];
 	[self.view addSubview:tableView];
 	[tableView release];
 	
+    self.title = [[cell configuration] objectForKey:@"Title"];
 }
 
 

@@ -14,6 +14,7 @@
 #import "NumberCell.h"
 #import "TimeIntervalCell.h"
 #import "ToggleSwitchCell.h"
+#import "MultiValueCell.h"
 
 @implementation SettingsCell
 
@@ -39,7 +40,10 @@
 	
 	if ([settingstype isEqualToString:@"PSToggleSwitchSpecifier"])
 		return [[[ToggleSwitchCell alloc] initWithReuseIdentifier:settingstype] autorelease];
-	
+
+    if ([settingstype isEqualToString:@"PSMultiValueSpecifier"])
+		return [[[MultiValueCell alloc] initWithReuseIdentifier:settingstype] autorelease];
+
 	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;
 	//return [[[self alloc] initWithValuelabelAndReuseIdentifier:@"SettingsCell"] autorelease];

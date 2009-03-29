@@ -12,6 +12,7 @@
 #import "SettingsMetadataSource.h"
 #import	"SettingsCell.h"
 #import "SettingsEditorViewController.h"
+#import "MultiValueEditorViewController.h"
 #import "SettingsCellProtocol.h"
 
 @implementation SettingsMetadataSource
@@ -153,7 +154,13 @@
 
 /** Shows the editor for this cell. */
 - (void) showEditorForCell:(SettingsCell *) cell {
-	SettingsEditorViewController *vc = [[SettingsEditorViewController alloc] initWithCell:cell];
+    SettingsEditorViewController *vc;
+    if ([[[cell configuration] objectForKey:@"Type"] isEqualToString:@"PSMultiValueSpecifier"]) {
+        vc = [[MultiValueEditorViewController alloc] initWithCell:cell];
+    }
+    else {
+        vc = [[SettingsEditorViewController alloc] initWithCell:cell];
+    }
 	[viewcontroller.navigationController pushViewController:vc animated:YES];
 	vc.view.backgroundColor = viewcontroller.view.backgroundColor;
 	[vc release];
