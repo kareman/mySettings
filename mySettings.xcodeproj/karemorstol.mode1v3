@@ -276,6 +276,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>23</integer>
 									<integer>20</integer>
 									<integer>0</integer>
 								</array>
@@ -330,46 +331,29 @@
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>BA73E03F0F7EEB3A00B3B4D3</string>
+										<string>BAB41F780F7FDA6C00ED3822</string>
 										<key>history</key>
 										<array>
-											<string>BA24F9230F7C1694006A8B8F</string>
 											<string>BA24F9640F7C70B3006A8B8F</string>
 											<string>BA24F9650F7C70B3006A8B8F</string>
 											<string>BA73DF300F7ED1F400B3B4D3</string>
-											<string>BA73DF310F7ED1F400B3B4D3</string>
 											<string>BA73DF320F7ED1F400B3B4D3</string>
 											<string>BA73E0170F7EDC5C00B3B4D3</string>
-											<string>BA73E02C0F7EE7E500B3B4D3</string>
-											<string>BA73E03D0F7EEB3A00B3B4D3</string>
-											<string>BA73E02D0F7EE7E500B3B4D3</string>
+											<string>BA73E06E0F7EF94B00B3B4D3</string>
+											<string>BA73E06F0F7EF94B00B3B4D3</string>
+											<string>BAB41F750F7FDA6C00ED3822</string>
+											<string>BAB41F760F7FDA6C00ED3822</string>
 										</array>
 										<key>prevStack</key>
 										<array>
 											<string>BA7D78500F7AD95000814E47</string>
 											<string>BAEA668A0F7AFE19006F3493</string>
 											<string>BAEA668C0F7AFE19006F3493</string>
-											<string>BAEA668D0F7AFE19006F3493</string>
-											<string>BAEA67080F7B0FFC006F3493</string>
-											<string>BA24F9270F7C1694006A8B8F</string>
-											<string>BA73DF360F7ED1F400B3B4D3</string>
-											<string>BA73DF370F7ED1F400B3B4D3</string>
-											<string>BA73DF380F7ED1F400B3B4D3</string>
 											<string>BA73DF390F7ED1F400B3B4D3</string>
-											<string>BA73DF3B0F7ED1F400B3B4D3</string>
-											<string>BA73DF3D0F7ED1F400B3B4D3</string>
-											<string>BA73DF3E0F7ED1F400B3B4D3</string>
-											<string>BA73DF400F7ED1F400B3B4D3</string>
-											<string>BA73DF420F7ED1F400B3B4D3</string>
-											<string>BA73E01A0F7EDC5C00B3B4D3</string>
 											<string>BA73E01B0F7EDC5C00B3B4D3</string>
-											<string>BA73E0220F7EDEA100B3B4D3</string>
-											<string>BA73E0240F7EDEA100B3B4D3</string>
-											<string>BA73E02F0F7EE7E500B3B4D3</string>
-											<string>BA73E0300F7EE7E500B3B4D3</string>
-											<string>BA73E0310F7EE7E500B3B4D3</string>
-											<string>BA73E0320F7EE7E500B3B4D3</string>
-											<string>BA73E03E0F7EEB3A00B3B4D3</string>
+											<string>BA73E0700F7EF94B00B3B4D3</string>
+											<string>BA73E0710F7EF94B00B3B4D3</string>
+											<string>BAB41F770F7FDA6C00ED3822</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -427,9 +411,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>BA73DF440F7ED1F400B3B4D3</string>
+				<string>BAB41F790F7FDA6C00ED3822</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>BA73DF450F7ED1F400B3B4D3</string>
+				<string>BAB41F7A0F7FDA6C00ED3822</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -563,11 +547,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>BA73DF460F7ED1F400B3B4D3</string>
-		<string>BA73DF470F7ED1F400B3B4D3</string>
-		<string>BA7A4E990F5C87FF009B40A5</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/karemorstol/Programmering/XCode/mySettings/mysettings/mySettings.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -768,13 +748,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>BA73DE410F7EC27E00B3B4D3</string>
+				<string>BAB41F7B0F7FDA6C00ED3822</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>BA73DE420F7EC27E00B3B4D3</string>
-				<string>BA73DE430F7EC27E00B3B4D3</string>
-				<string>BA73DE440F7EC27E00B3B4D3</string>
-				<string>BA73DE450F7EC27E00B3B4D3</string>
-				<string>BA73DE460F7EC27E00B3B4D3</string>
+				<string>BAB41F7C0F7FDA6C00ED3822</string>
+				<string>BAB41F7D0F7FDA6C00ED3822</string>
+				<string>BAB41F7E0F7FDA6C00ED3822</string>
+				<string>BAB41F7F0F7FDA6C00ED3822</string>
+				<string>BAB41F800F7FDA6C00ED3822</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
