@@ -9,6 +9,8 @@
  *    Kåre Morstøl (NotTooBad Software) - initial API and implementation
  *******************************************************************************/ 
 
+// http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns
+
 #import "KMTimeIntervalFormatter.h"
 
 @implementation KMTimeIntervalFormatter
