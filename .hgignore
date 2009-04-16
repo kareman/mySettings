@@ -10,3 +10,4 @@ Documentation/Doxygen
 *.pbxuser
 *.perspective
 *.perspectivev3
+*.mode1v3
