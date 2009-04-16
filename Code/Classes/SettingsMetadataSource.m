@@ -19,6 +19,8 @@
 
 @synthesize title, settings, viewcontroller;
 
+NSMutableArray *configurationsForDynamicSections;
+
 #pragma mark Private Methods
 
 // retrieves configuration from plist
@@ -48,7 +50,13 @@
 		
 		// if it's a new group, create the new section and title 
 		if ([type isEqualToString:@"PSGroupSpecifier"]) {
-			[sections addObject:[NSMutableArray arrayWithCapacity:5]];
+			if([item valueForKey:@"Key"]) {
+				NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithDictionary:[item valueForKey:@"PreferenceSpecifiers"]];
+				[configuration setValue:[item valueForKey:@"Key"] forKey:@"_ArrayKeyPath"];
+				[sections addObject:configuration];
+			} else 			
+				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
+
 			[sectiontitles addObject:[item valueForKey:@"Title"]];
 		} 
 		// if not, add the item to current section 
@@ -79,8 +87,16 @@
 }
 
 - (NSDictionary *) configurationAtIndexPath:(NSIndexPath *)indexpath {
-	NSArray *section = (NSArray *) [sections objectAtIndex:indexpath.section];
-	return [section objectAtIndex:indexpath.row];
+	NSObject *sectionconfiguration = [sections objectAtIndex:indexpath.section];
+	if ([sectionconfiguration isKindOfClass:[NSArray class]]) {
+		return [(NSArray *)sectionconfiguration objectAtIndex:indexpath.row];
+	}
+	else if ([sectionconfiguration isKindOfClass:[NSDictionary class]]) {
+		return (NSDictionary *)sectionconfiguration; 
+	}
+	
+	NSAssert(FALSE, @"not implemented"); 
+	return nil;
 }
 
 #pragma mark init / dealloc
@@ -121,7 +137,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [(NSMutableArray *) [sections objectAtIndex:section] count];
+	NSObject *configuration = [sections objectAtIndex:section];
+	if ([configuration isKindOfClass:[NSArray class]]) {
+		return [(NSArray *)configuration count];
+	}
+	else if ([configuration isKindOfClass:[NSDictionary class]]) {
+		NSString *key = (NSString *)[(NSDictionary *)configuration valueForKey:@"_ArrayKeyPath"]; 
+		NSArray *array = (NSArray *)[settings valueForKeyPath:key];
+		return [array count];
+	}
+	NSAssert(FALSE, @"not implemented"); 
+	return 0;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -145,7 +171,14 @@
 	
 	// Set up the cell...
 	cell.configuration = configuration;
-	cell.value = [settings valueForKey:[configuration valueForKey:@"Key"]];
+	
+	if ([configuration valueForKey:@"_ArrayKeyPath"]) {
+		NSString *key = [configuration valueForKey:@"_ArrayKeyPath"];
+		NSArray *array = [settings valueForKeyPath:key];
+		cell.value = [array objectAtIndex:indexPath.row];
+	} else
+		cell.value = [settings valueForKey:[configuration valueForKey:@"Key"]];
+
 	if ([configuration valueForKey:@"IndentLevel"])
 		cell.indentationLevel = [(NSNumber *)[configuration valueForKey:@"IndentLevel"] intValue];
 	
@@ -155,7 +188,7 @@
 /** Shows the editor for this cell. */
 - (void) showEditorForCell:(SettingsCell *) cell {
     SettingsEditorViewController *vc;
-    if ([[[cell configuration] objectForKey:@"Type"] isEqualToString:@"PSMultiValueSpecifier"]) {
+    if ([[cell.configuration objectForKey:@"Type"] isEqualToString:@"PSMultiValueSpecifier"]) {
         vc = [[MultiValueEditorViewController alloc] initWithCell:cell];
     }
     else {

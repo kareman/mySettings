@@ -21,6 +21,9 @@ SettingsViewController *settingsviewcontroller;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
 //	[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:15] forKey:@"d"];
+	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
+	if (![userdefaults arrayForKey:@"array"])
+		[userdefaults setValue:[NSArray arrayWithObjects:@"Custom cells can do what they want",@"All this is from an array of strings",@"Pretty cool, huh?!", nil] forKey:@"array"];
 	
 	NSString *plist = [[NSBundle mainBundle] pathForResource:@"Root" ofType:@"plist"];
 	SettingsViewController *settingsviewcontroller = [[SettingsViewController alloc] initWithConfigFile:plist];

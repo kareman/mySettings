@@ -26,7 +26,7 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
+   [super dealloc];
 	[label release];
 }
 
@@ -41,12 +41,17 @@
 	
 	label.frame = titleframe;
 }
-
+/*
 - (void) setConfiguration:(NSDictionary *)config {
 	configuration = config;
 	label.text = [configuration objectForKey:@"Title"];
-	
-}
 
+}
+*/
+
+- (void) setValue:(id)newvalue {
+	value = newvalue;
+	label.text = (NSString *) value;
+}
 
 @end
