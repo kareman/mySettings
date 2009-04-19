@@ -26,5 +26,9 @@
 /** The main init method. All subclasses must implement it. */
 - (id) initWithReuseIdentifier:(NSString *)reuseIdentifier;
 
+@optional
+
+/** Called right after class has been initialised */
+- (void) cellDidInit;
 
 @end
