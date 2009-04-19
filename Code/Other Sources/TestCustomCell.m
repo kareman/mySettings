@@ -49,7 +49,7 @@
 }
 */
 
-- (void) setValue:(id)newvalue {
+- (void) setValue:(NSObject *)newvalue {
 	value = newvalue;
 	label.text = (NSString *) value;
 }

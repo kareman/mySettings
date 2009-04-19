@@ -68,7 +68,7 @@ NSMutableArray *configurationsForDynamicSections;
 			 This is to ensure that the settings object has values for all the keys in the plist file, 
 			 even those values that aren't changed by the user. */
 			NSString *key = [item valueForKey:@"Key"];
-			if (![settings valueForKey:key])
+			if (key && ![settings valueForKey:key])
 				/* set value to an empty string if it's not already defined */
 				[settings setValue:
 				 ([item valueForKey:@"DefaultValue"] ? [item valueForKey:@"DefaultValue"] : @"")
@@ -181,6 +181,8 @@ NSMutableArray *configurationsForDynamicSections;
 
 	if ([configuration valueForKey:@"IndentLevel"])
 		cell.indentationLevel = [(NSNumber *)[configuration valueForKey:@"IndentLevel"] intValue];
+	else
+		cell.indentationLevel = 0;
 	
 	return cell;
 }
