@@ -167,6 +167,8 @@ NSMutableArray *configurationsForDynamicSections;
 	if (cell == nil) {
 		cell = [SettingsCell cellFromConfiguration:configuration];
 		cell.changedsettings = changedsettings;
+		if ([cell respondsToSelector:@selector(cellDidInit)])
+			[cell cellDidInit];
 	}
 	
 	// Set up the cell...

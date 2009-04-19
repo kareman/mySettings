@@ -24,9 +24,11 @@
 	UILabel *valuelabel;	/**< The optional value label */
 	UIView *valueview;		/**< Points to either the value label or a view implemented by subclasses */
 	
-	NSObject *value;		/**< The value of this setting */
+	CGRect titleframe, valueframe;			/**< Backup of original frames */
+	
+	NSObject *value;								/**< The value of this setting */
 	NSMutableDictionary *changedsettings;	/**< Cache for unsaved changes to settings */
-	NSDictionary *configuration;	/**< The configuration of the cell, taken from the plist */
+	NSDictionary *configuration;				/**< The configuration of the cell, taken from the plist */
 	
 }
 
@@ -52,5 +54,7 @@
 
 /** Sets up the title label and a value label. */
 - (id) initWithValuelabelAndReuseIdentifier:(NSString *)reuseIdentifier;
+
+//- (void) cellDidInit;
 
 @end

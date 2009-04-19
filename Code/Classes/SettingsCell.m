@@ -43,10 +43,9 @@
 
     if ([settingstype isEqualToString:@"PSMultiValueSpecifier"])
 		return [[[MultiValueCell alloc] initWithReuseIdentifier:settingstype] autorelease];
-
+	
 	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;
-	//return [[[self alloc] initWithValuelabelAndReuseIdentifier:@"SettingsCell"] autorelease];
 }
 
 - (id) initWithReuseIdentifier:(NSString *)reuseIdentifier {
@@ -87,8 +86,20 @@
 	return self;
 }
 
+/** 
+ Called by SettingsMetadataSource after cell has been initialised.
+ Backs up the frames for title label and value view, 
+ to be used by layoutSubviews in order to handle the reuse of cells.
+ */
+- (void) cellDidInit {
+	if (titlelabel)
+		titleframe = titlelabel.frame;
+	if (valueview)
+		valueframe = valueview.frame;
+}
+
 - (void)dealloc {
-    [super dealloc];
+   [super dealloc];
 	[titlelabel release];
 	[valueview release];
 }
@@ -103,60 +114,60 @@
 - (void) layoutSubviews {
 	[super layoutSubviews];
 	
-	CGRect valueframe, titleframe;
+	CGRect newvalueframe, newtitleframe;
 	
 	// less margin is needed if there is a cell accessory.
 	CGFloat rightmargin = (self.accessoryType == UITableViewCellAccessoryNone ? 10 : 3);
 	
 	// set up the title label, if it exists.
 	if (titlelabel) {
-		titleframe = titlelabel.frame;
-		titleframe.origin.x = 10;
+		newtitleframe = titleframe;	//titlelabel.frame;
+		newtitleframe.origin.x = 10;
 		
 		// resize label to fit content
-		titleframe.size.width = [titlelabel.text sizeWithFont:titlelabel.font].width;
-		titleframe.size.height = self.contentView.frame.size.height;
+		newtitleframe.size.width = [titlelabel.text sizeWithFont:titlelabel.font].width;
+		newtitleframe.size.height = self.contentView.frame.size.height;
 		
-		titlelabel.frame = titleframe;
+		titlelabel.frame = newtitleframe;
 	}
 	
 	// set up the value view, if it exists.
 	if (valueview) {
-		valueframe = valueview.frame;
+		newvalueframe = valueframe;	//valueview.frame;
 		
 		// set the width of the value view, if not already set by a subclass.
-		if (valueframe.size.width == 0) {
+		if (newvalueframe.size.width == 0) {
 			
 			// if title label doesn't exists, let the value view span the entire cell.
 			if (!titlelabel)
-				valueframe.origin.x = 10;
+				newvalueframe.origin.x = 10;
 			else {
 				// let the value view start 10 pixels to the right of the title label 
-				valueframe.origin.x = titleframe.origin.x + titleframe.size.width + 10;
+				newvalueframe.origin.x = newtitleframe.origin.x + newtitleframe.size.width + 10;
 				
 				// ... but no less than 80 pixels from the left side of the cell.
-				if (valueframe.origin.x < 80)
-					valueframe.origin.x = 80;
+				if (newvalueframe.origin.x < 80)
+					newvalueframe.origin.x = 80;
 			}
 			
 			// let the value view go all the way to the right side of the cell.
-			valueframe.size.width = self.contentView.frame.size.width - valueframe.origin.x - rightmargin;
+			newvalueframe.size.width = self.contentView.frame.size.width - newvalueframe.origin.x - rightmargin;
 		} 
 		
 		//  the width of the value view has been set by a subclass, so just align it to the right.
 		else {
-			valueframe.origin.x = self.contentView.frame.size.width - (valueframe.size.width + rightmargin);
+			newvalueframe.origin.x = self.contentView.frame.size.width - (newvalueframe.size.width + rightmargin);
 		}
 		
 		// if not already set, make value view span the entire height of the cell 
-		if (valueframe.size.height == 0)
-			valueframe.size.height = self.contentView.frame.size.height;
+		if (newvalueframe.size.height == 0)
+			newvalueframe.size.height = self.contentView.frame.size.height;
 		/* if vertical alignment is not set and the height was not just set to the height of the cell,
 		 center the value view vertically. */
-		else if (valueframe.origin.y == 0 )
-			valueframe.origin.y = (self.contentView.frame.size.height - valueframe.size.height) / 2;
+		else if (newvalueframe.origin.y == 0 )
+			newvalueframe.origin.y = (self.contentView.frame.size.height - newvalueframe.size.height) / 2;
 		
-		valueview.frame = valueframe;
+		valueview.frame = newvalueframe;
 	}
 	
 }

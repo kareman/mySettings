@@ -276,7 +276,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>21</integer>
+									<integer>8</integer>
+									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -301,7 +302,7 @@
 							<real>252</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>539 114 1106 1064 0 0 1920 1178 </string>
+						<string>0 114 1106 1064 0 0 1920 1178 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -319,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SettingsMetadataSource.m</string>
+								<string>SettingsCell.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,32 +328,64 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SettingsMetadataSource.m</string>
+										<string>SettingsCell.h</string>
 										<key>_historyCapacity</key>
 										<integer>10</integer>
 										<key>bookmark</key>
-										<string>BAB20AB70F9B559E0035FD70</string>
+										<string>BAB20B300F9B626D0035FD70</string>
 										<key>history</key>
 										<array>
-											<string>BAD1E7E20F980270002F4FC0</string>
-											<string>BAD1E7E30F980270002F4FC0</string>
 											<string>BAD1E7E40F980270002F4FC0</string>
 											<string>BAD1E8050F980458002F4FC0</string>
 											<string>BAD1E8180F9804CD002F4FC0</string>
 											<string>BA6AC6970F98B41500EFA977</string>
 											<string>BA6AC8310F9966A700EFA977</string>
-											<string>BA6AC8340F9966A700EFA977</string>
+											<string>BAB20AD00F9B5EA20035FD70</string>
+											<string>BAB20AD10F9B5EA20035FD70</string>
+											<string>BAB20B1F0F9B622A0035FD70</string>
+											<string>BAB20B200F9B622A0035FD70</string>
+											<string>BAB20B180F9B61CE0035FD70</string>
 										</array>
 										<key>prevStack</key>
 										<array>
-											<string>BAD1E7E70F980270002F4FC0</string>
 											<string>BAD1E7E80F980270002F4FC0</string>
-											<string>BAD1E7E90F980270002F4FC0</string>
 											<string>BAD1E7EA0F980270002F4FC0</string>
 											<string>BAD1E7F50F980286002F4FC0</string>
 											<string>BAD1E8080F980458002F4FC0</string>
 											<string>BAD1E8090F980458002F4FC0</string>
 											<string>BAD1E8190F9804CD002F4FC0</string>
+											<string>BAB20AD40F9B5EA20035FD70</string>
+											<string>BAB20AD50F9B5EA20035FD70</string>
+											<string>BAB20AD60F9B5EA20035FD70</string>
+											<string>BAB20AD70F9B5EA20035FD70</string>
+											<string>BAB20AD80F9B5EA20035FD70</string>
+											<string>BAB20AD90F9B5EA20035FD70</string>
+											<string>BAB20ADA0F9B5EA20035FD70</string>
+											<string>BAB20ADB0F9B5EA20035FD70</string>
+											<string>BAB20ADC0F9B5EA20035FD70</string>
+											<string>BAB20ADD0F9B5EA20035FD70</string>
+											<string>BAB20ADE0F9B5EA20035FD70</string>
+											<string>BAB20ADF0F9B5EA20035FD70</string>
+											<string>BAB20AE00F9B5EA20035FD70</string>
+											<string>BAB20AE10F9B5EA20035FD70</string>
+											<string>BAB20AE20F9B5EA20035FD70</string>
+											<string>BAB20AE30F9B5EA20035FD70</string>
+											<string>BAB20AE40F9B5EA20035FD70</string>
+											<string>BAB20AE50F9B5EA20035FD70</string>
+											<string>BAB20AE60F9B5EA20035FD70</string>
+											<string>BAB20AE70F9B5EA20035FD70</string>
+											<string>BAB20AE80F9B5EA20035FD70</string>
+											<string>BAB20AE90F9B5EA20035FD70</string>
+											<string>BAB20B030F9B5EFA0035FD70</string>
+											<string>BAB20B040F9B5EFA0035FD70</string>
+											<string>BAB20B090F9B5F0A0035FD70</string>
+											<string>BAB20B110F9B619D0035FD70</string>
+											<string>BAB20B120F9B619D0035FD70</string>
+											<string>BAB20B130F9B619D0035FD70</string>
+											<string>BAB20B1A0F9B61CE0035FD70</string>
+											<string>BAB20B210F9B622A0035FD70</string>
+											<string>BAB20B220F9B622A0035FD70</string>
+											<string>BAB20B230F9B622A0035FD70</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -366,7 +399,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {832, 1018}}</string>
 								<key>RubberWindowFrame</key>
-								<string>539 114 1106 1064 0 0 1920 1178 </string>
+								<string>0 114 1106 1064 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -386,7 +419,7 @@
 								<key>Frame</key>
 								<string>{{0, 1023}, {832, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>539 114 1106 1064 0 0 1920 1178 </string>
+								<string>0 114 1106 1064 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -546,11 +579,17 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>BAB20B250F9B622A0035FD70</string>
+		<string>BAEB545C0F5DCDE50093BF1B</string>
+		<string>BAB20AEC0F9B5EA20035FD70</string>
+		<string>BAB20AED0F9B5EA20035FD70</string>
+		<string>BA7A4E990F5C87FF009B40A5</string>
 		<string>1CD10A99069EF8BA00B06720</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/karemorstol/Programmering/XCode/mySettings/mysettings/mySettings.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>539 114 1106 1064 0 0 1920 1178 </string>
+	<string>0 114 1106 1064 0 0 1920 1178 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -566,12 +605,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>SettingsCell.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -627,7 +668,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>BA7A4E990F5C87FF009B40A5</string>
-				<string>BAD1E81D0F9804CD002F4FC0</string>
+				<string>BAB20ACB0F9B5E910035FD70</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -909,7 +950,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>BAD1E76D0F97F2B9002F4FC0</string>
+				<string>BAB20ACC0F9B5E910035FD70</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1438,7 +1479,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>BAEB545C0F5DCDE50093BF1B</string>
-				<string>BA319E650F79724C00121BB9</string>
+				<string>BAB20ACD0F9B5E910035FD70</string>
 				<string>BAEB545B0F5DCDE50093BF1B</string>
 			</array>
 			<key>WindowString</key>
