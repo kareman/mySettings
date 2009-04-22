@@ -38,8 +38,8 @@
 	LabeledPickerView *editorview = [[LabeledPickerView alloc] init];
 	editorview.delegate = self;
 	editorview.showsSelectionIndicator = YES;
-	[editorview addLabel:@"min" forComponent:0];
-	[editorview addLabel:@"secs" forComponent:1];
+	[editorview addLabel:@"mins" forComponent:0 forLongestString:@"mins"];
+	[editorview addLabel:@"secs" forComponent:1 forLongestString:@"secs"];
 	
 	// set the picker view to show the current time interval
 	int wholeseconds = round(((NSNumber *) self.value).intValue);
@@ -56,6 +56,12 @@
 
 // called when the wheel stops
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+	if (component == 0) {
+		[(LabeledPickerView *)pickerView updateLabel:(row==1 ? @"min" : @"mins") forComponent:0];
+	} else if (component == 1) {
+		[(LabeledPickerView *)pickerView updateLabel:(row==1 ? @"sec" : @"secs") forComponent:1];
+	}
+	
 	// update the time interval value
 	self.value = [NSNumber numberWithInt:
 				  (component == 0 ? 
@@ -97,7 +103,7 @@
 {
 	switch (component) {
 		case 0:
-			return 78;
+			return 87;
 			break;
 		case 1:
 			return 87;

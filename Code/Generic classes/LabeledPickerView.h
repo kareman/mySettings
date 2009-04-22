@@ -6,7 +6,8 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *    Kåre Morstøl (NotTooBad Software) - initial API and implementation
+ *   Kåre Morstøl (NotTooBad Software) - initial API and implementation
+ *	  Michael Kaye (http://www.sendmetospace.co.uk) - modified addLabel/didMoveWindow. New methods - updateLabel, refreshLabel and removeLabel
  *******************************************************************************/ 
 
 #import <Foundation/Foundation.h>
@@ -21,6 +22,9 @@
 }
 
 /** Adds the label for the given component. */
-- (void) addLabel:(NSString *)labeltext forComponent:(NSUInteger)component;
+- (void) addLabel:(NSString *)labeltext forComponent:(NSUInteger)component forLongestString:(NSString *)longestString;
+- (void) updateLabel:(NSString *)labeltext forComponent:(NSUInteger)component;
+- (void) removeLabelView:(NSUInteger)component;
+- (void) refreshLabels;
 
 @end
