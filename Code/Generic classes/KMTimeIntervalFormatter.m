@@ -65,15 +65,15 @@
 			if (minutes > 0) {
 				if ([result length] > 0)
 					[result appendString:@" "];
-				[result appendFormat:@"%i min", minutes];
+				[result appendFormat:minutes == 1 ? @"%i min" : @"%i mins", minutes];
 			}
 			if (seconds > 0) {
 				if ([result length] > 0)
 					[result appendString:@" "];
-				[result appendFormat:@"%i secs", seconds];
+				[result appendFormat:seconds == 1 ? @"%i sec" : @"%i secs", seconds];
 			}		
 			if ([result length] == 0)
-				[result appendString:@"0 s"];
+				[result appendString:@"0 secs"];
 			
 			return result;
 			break;
