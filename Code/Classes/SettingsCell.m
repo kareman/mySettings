@@ -41,9 +41,9 @@
 	if ([settingstype isEqualToString:@"PSToggleSwitchSpecifier"])
 		return [[[ToggleSwitchCell alloc] initWithReuseIdentifier:settingstype] autorelease];
 
-    if ([settingstype isEqualToString:@"PSMultiValueSpecifier"])
+   if ([settingstype isEqualToString:@"PSMultiValueSpecifier"])
 		return [[[MultiValueCell alloc] initWithReuseIdentifier:settingstype] autorelease];
-	
+
 	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;
 }
@@ -60,11 +60,11 @@
 			titlelabel = [[UILabel alloc] initWithFrame:CGRectZero];
 			titlelabel.textAlignment = UITextAlignmentLeft;
 			
-			UIFont *font = [UIFont boldSystemFontOfSize:17];
-			titlelabel.font = font;
+			titlelabel.font = [UIFont boldSystemFontOfSize:17];
 			titlelabel.textColor = [UIColor blackColor];
 			
 			[self.contentView addSubview:titlelabel];
+			[titlelabel release];
 		}
     }
     return self;
@@ -75,12 +75,11 @@
 		valuelabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		valuelabel.textAlignment = UITextAlignmentRight;
 		
-		UIFont *font = [UIFont systemFontOfSize:17];
-		
 		valuelabel.textColor = [UIColor colorWithRed:0.192157 green:0.309804 blue:0.521569 alpha:1.0];
-		valuelabel.font = font;
+		valuelabel.font = [UIFont systemFontOfSize:17];
 		
 		[self.contentView addSubview:valuelabel];
+		[valuelabel release];
 		valueview = valuelabel;
 	}
 	return self;
@@ -100,8 +99,6 @@
 
 - (void)dealloc {
    [super dealloc];
-	[titlelabel release];
-	[valueview release];
 }
 
 /**

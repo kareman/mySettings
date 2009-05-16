@@ -35,8 +35,6 @@
 		BAB41FD00F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */; };
 		BAB41FD10F800E3D00ED3822 /* MultiValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */; };
 		BAB41FD20F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */; };
-		BAB41FD30F800E3D00ED3822 /* MultiValueEditorViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB41FCD0F800E3D00ED3822 /* MultiValueEditorViewController.h */; };
-		BAB41FD40F800E3D00ED3822 /* MultiValueCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BAB41FCE0F800E3D00ED3822 /* MultiValueCell.h */; };
 		BABC18FE0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BABC18FF0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BAC97FCA0F6165D500CD3E94 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC97FC90F6165D500CD3E94 /* SettingsCell.m */; };
@@ -178,12 +176,12 @@
 		BAC97FC60F6165AE00CD3E94 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */,
-				BAB41FCE0F800E3D00ED3822 /* MultiValueCell.h */,
-				BAE687E10F603B98002E9B47 /* TextfieldCell.h */,
-				BAE687E20F603B98002E9B47 /* TextfieldCell.m */,
 				BAC97FC80F6165D500CD3E94 /* SettingsCell.h */,
 				BAC97FC90F6165D500CD3E94 /* SettingsCell.m */,
+				BAB41FCE0F800E3D00ED3822 /* MultiValueCell.h */,
+				BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */,
+				BAE687E10F603B98002E9B47 /* TextfieldCell.h */,
+				BAE687E20F603B98002E9B47 /* TextfieldCell.m */,
 				BAC980530F617BEE00CD3E94 /* NumberCell.h */,
 				BAC980540F617BEE00CD3E94 /* NumberCell.m */,
 				BAC9811B0F61B77100CD3E94 /* TimeIntervalCell.h */,
@@ -199,8 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				BAC97FC60F6165AE00CD3E94 /* Cells */,
-				BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */,
 				BAB41FCD0F800E3D00ED3822 /* MultiValueEditorViewController.h */,
+				BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */,
 				BAFAB3950F6836F300FDB4AF /* SettingsEditorViewController.h */,
 				BAFAB3960F6836F300FDB4AF /* SettingsEditorViewController.m */,
 				BAEB54330F5DC1D40093BF1B /* SettingsMetadataSource.h */,
@@ -237,8 +235,6 @@
 				BA4B7E4D0F69B8BC00BC932F /* SettingsMetadataSource.h in Headers */,
 				BA4B7E4E0F69B8BC00BC932F /* SettingsViewController.h in Headers */,
 				BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */,
-				BAB41FD30F800E3D00ED3822 /* MultiValueEditorViewController.h in Headers */,
-				BAB41FD40F800E3D00ED3822 /* MultiValueCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +446,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "";
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphonesimulator2.2.1;
 			};
 			name = Release;
 		};

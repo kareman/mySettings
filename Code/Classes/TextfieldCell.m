@@ -28,12 +28,9 @@
 		valuetextfield.clearButtonMode = UITextFieldViewModeWhileEditing;
 		valuetextfield.returnKeyType = UIReturnKeyDone;
 		valuetextfield.enablesReturnKeyAutomatically = YES;
-		
 		[valuetextfield setDelegate:self];
-		/*		  [textField addTarget:self 
-		 action:@selector(textFieldDone:) 
-		 forControlEvents:UIControlEventEditingDidEndOnExit];
-		 */
+
+		[valuelabel removeFromSuperview];
 		[self.contentView addSubview:valuetextfield];
 		valueview = valuetextfield;
 	}
