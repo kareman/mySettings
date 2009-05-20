@@ -14,11 +14,11 @@
 
 @implementation TextfieldCell
 
-@synthesize configuration;
+//@synthesize configuration;
 
 - (id) initWithReuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
-		// Initialization code
+
 		valuetextfield = [[UITextField alloc] initWithFrame:CGRectMake(0, 11, 0, 25)];
 
 		valuetextfield.textColor = valuelabel.textColor;
