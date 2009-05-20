@@ -172,7 +172,7 @@ NSMutableArray *configurationsForDynamicSections;
 			[cell cellDidInit];
 		
 		if (delegate && [cell isKindOfClass:[SettingsCell class]] && [delegate respondsToSelector:@selector(cellDidInit:)])
-			[(id) delegate cellDidInit:cell];
+			[(id)delegate cellDidInit:cell];
 	}
 	
 	// Set up the cell...
@@ -197,10 +197,10 @@ NSMutableArray *configurationsForDynamicSections;
 - (void) showEditorForCell:(SettingsCell *) cell {
     SettingsEditorViewController *vc;
     if ([[cell.configuration objectForKey:@"Type"] isEqualToString:@"PSMultiValueSpecifier"]) {
-        vc = [[MultiValueEditorViewController alloc] initWithCell:cell];
+        vc = [[MultiValueEditorViewController alloc] initWithCell:cell andDelegate:delegate];
     }
     else {
-        vc = [[SettingsEditorViewController alloc] initWithCell:cell];
+        vc = [[SettingsEditorViewController alloc] initWithCell:cell andDelegate:delegate];
     }
 	[viewcontroller.navigationController pushViewController:vc animated:YES];
 	vc.view.backgroundColor = viewcontroller.view.backgroundColor;

@@ -21,6 +21,6 @@ The view controller for the editor view.
 	SettingsCell *originalcell;
 }
 
-- (id)initWithCell:(SettingsCell *)newcell;
+- (id)initWithCell:(SettingsCell *)newcell andDelegate:(NSObject *)delegate;
 
 @end

@@ -15,7 +15,7 @@
 @implementation MultiValueEditorViewController
 
 - (void) loadView {
-    [super loadView];
+	[super loadView];
 	
 	// the area below the navigation bar 
 	CGRect visibleframe = self.view.frame;
@@ -24,41 +24,41 @@
 	
 	// setup and add the table view 
 	UITableView *tableView = (UITableView*)[self.view viewWithTag:666];
-    tableView.frame= visibleframe;
-    tableView.scrollEnabled = YES;
+	tableView.frame= visibleframe;
+	tableView.scrollEnabled = YES;
 }
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[[cell configuration] objectForKey:@"Titles"] count];
+	return [[[cell configuration] objectForKey:@"Titles"] count];
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *MyIdentifier = @"MultiViewCell";
-
-    UITableViewCell *ocell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+	static NSString *MyIdentifier = @"MultiViewCell";
+	
+	UITableViewCell *ocell = [tableView dequeueReusableCellWithIdentifier:MyIdentifier];
 	if (ocell == nil) {
 		ocell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:MyIdentifier] autorelease];
-        if ([cell.value isEqual:[[[cell configuration] objectForKey:@"Values"] objectAtIndex:indexPath.row]]) {
-            ocell.accessoryType = UITableViewCellAccessoryCheckmark;
-        }
-        else {
-            ocell.accessoryType = UITableViewCellAccessoryNone;
-        }
+		if ([cell.value isEqual:[[[cell configuration] objectForKey:@"Values"] objectAtIndex:indexPath.row]]) {
+			ocell.accessoryType = UITableViewCellAccessoryCheckmark;
+		}
+		else {
+			ocell.accessoryType = UITableViewCellAccessoryNone;
+		}
 	}
-    ocell.text = [[[cell configuration] objectForKey:@"Titles"] objectAtIndex:indexPath.row];
-    return ocell;
+	ocell.text = [[[cell configuration] objectForKey:@"Titles"] objectAtIndex:indexPath.row];
+	return ocell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.value = [[[cell configuration] objectForKey:@"Values"] objectAtIndex:indexPath.row];
-    for (UITableViewCell* a in [tableView visibleCells]) {
-        a.accessoryType = UITableViewCellAccessoryNone;
-    }
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UITableViewCell* activeCell = [tableView cellForRowAtIndexPath:indexPath];
-    activeCell.accessoryType = UITableViewCellAccessoryCheckmark;
+	cell.value = [[[cell configuration] objectForKey:@"Values"] objectAtIndex:indexPath.row];
+	for (UITableViewCell* a in [tableView visibleCells]) {
+		a.accessoryType = UITableViewCellAccessoryNone;
+	}
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
+	UITableViewCell* activeCell = [tableView cellForRowAtIndexPath:indexPath];
+	activeCell.accessoryType = UITableViewCellAccessoryCheckmark;
 }
 
 @end

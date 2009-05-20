@@ -15,27 +15,30 @@
 @implementation SettingsEditorViewController
 
 
-- (id)initWithCell:(SettingsCell *)newcell {
-    if (self = [super init]) {
+- (id)initWithCell:(SettingsCell *)newcell andDelegate:(NSObject *)delegate {
+	if (self = [super init]) {
 		originalcell = [newcell retain];
 		cell = [[[originalcell class] alloc] initWithReuseIdentifier:nil];
 		cell.indentationLevel = 0;
 		cell.accessoryType = UITableViewCellAccessoryNone;
 		cell.configuration = originalcell.configuration;
 		cell.value = originalcell.value;
-    }
-    return self;
+		
+		if (delegate && [delegate respondsToSelector:@selector(cellDidInit:)])
+			[(id) delegate cellDidInit:cell];
+	}
+	return self;
 }
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 	[cell release];
 }
 
 #pragma mark View
- 
+
 - (void) loadView {
-    [super loadView];
+	[super loadView];
 	
 	// the area below the navigation bar 
 	CGRect visibleframe = self.view.frame;
@@ -61,25 +64,25 @@
 	tableView.delegate = self;
 	tableView.dataSource = self;
 	tableView.scrollEnabled = NO;
-    tableView.tag = 666;
+	tableView.tag = 666;
 	tableView.backgroundColor = [UIColor clearColor];
 	[self.view addSubview:tableView];
 	[tableView release];
 	
-    self.title = [[cell configuration] objectForKey:@"Title"];
+	self.title = [[cell configuration] objectForKey:@"Title"];
 }
 
 
 /*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
+ - (void)viewWillAppear:(BOOL)animated {
+ [super viewWillAppear:animated];
+ }
+ */
 /*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
+ - (void)viewDidAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ }
+ */
 
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
@@ -88,27 +91,27 @@
 }
 
 /*
-- (void)viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
-}
-*/
+ - (void)viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
+ }
+ */
 
 #pragma mark Table view
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+	return 1;
 }
 
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+	return 1;
 }
 
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return cell;
+	return cell;
 }
 
 
