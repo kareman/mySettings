@@ -9,20 +9,15 @@
  *    Kåre Morstøl (NotTooBad Software) - initial API and implementation
  *******************************************************************************/ 
 
-#import <UIKit/UIKit.h>
-#import "SettingsCell.h"
+@class SettingsCell;
 
-@protocol SettingsDelegate;
+/** Delegates of SettingsMetadataSource implement this */
+@protocol SettingsDelegate
 
-/**
-The view controller for the editor view.
- Displays the cell that is being edited and the editor, normally a picker view or a keyboard.
- */
-@interface SettingsEditorViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-	SettingsCell *cell;	/**< the cell being edited */
-	SettingsCell *originalcell;
-}
+@optional
 
-- (id)initWithCell:(SettingsCell *)newcell andDelegate:(NSObject<SettingsDelegate> *)delegate; 
+/** Called right after class has been initialised */
+- (void) cellDidInit:(SettingsCell *)cell;
 
 @end
+

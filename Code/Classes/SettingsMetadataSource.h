@@ -12,6 +12,7 @@
 #import <UIKit/UIKit.h>
 
 @class SettingsCell;
+@protocol SettingsDelegate;
 
 /** Provides the settingsviewcontroller with the data from the plist configuration file. */
 @interface SettingsMetadataSource : NSObject <UITableViewDelegate, UITableViewDataSource> {
@@ -35,13 +36,13 @@
 	
 	UIViewController *viewcontroller;
 	
-	NSObject *delegate;
+	NSObject<SettingsDelegate> *delegate;
 }
 
 @property (nonatomic, readonly) NSString *title;	/**< The title of the settings view. */
 @property (nonatomic, retain) NSObject *settings;	/**< The object that stores the actual values of the settings. */
 
-@property (nonatomic, assign) NSObject *delegate;
+@property (nonatomic, assign) NSObject<SettingsDelegate> *delegate;
 
 /**
  The controller of the settings view.

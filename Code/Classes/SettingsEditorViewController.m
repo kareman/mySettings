@@ -10,12 +10,12 @@
  *******************************************************************************/ 
 
 #import "SettingsEditorViewController.h"
-
+#import "SettingsDelegate.h"
 
 @implementation SettingsEditorViewController
 
 
-- (id)initWithCell:(SettingsCell *)newcell andDelegate:(NSObject *)delegate {
+- (id)initWithCell:(SettingsCell *)newcell andDelegate:(NSObject<SettingsDelegate> *)delegate {
 	if (self = [super init]) {
 		originalcell = [newcell retain];
 		cell = [[[originalcell class] alloc] initWithReuseIdentifier:nil];
@@ -25,7 +25,7 @@
 		cell.value = originalcell.value;
 		
 		if (delegate && [delegate respondsToSelector:@selector(cellDidInit:)])
-			[(id) delegate cellDidInit:cell];
+			[delegate cellDidInit:cell];
 	}
 	return self;
 }

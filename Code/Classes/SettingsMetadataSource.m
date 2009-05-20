@@ -14,6 +14,7 @@
 #import "SettingsEditorViewController.h"
 #import "MultiValueEditorViewController.h"
 #import "SettingsCellProtocol.h"
+#import "SettingsDelegate.h"
 
 @implementation SettingsMetadataSource
 
@@ -172,7 +173,7 @@ NSMutableArray *configurationsForDynamicSections;
 			[cell cellDidInit];
 		
 		if (delegate && [cell isKindOfClass:[SettingsCell class]] && [delegate respondsToSelector:@selector(cellDidInit:)])
-			[(id)delegate cellDidInit:cell];
+			[delegate cellDidInit:(SettingsCell *)cell];
 	}
 	
 	// Set up the cell...

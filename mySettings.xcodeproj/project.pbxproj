@@ -41,6 +41,7 @@
 		BAC980550F617BEE00CD3E94 /* NumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC980540F617BEE00CD3E94 /* NumberCell.m */; };
 		BAC9811D0F61B77100CD3E94 /* TimeIntervalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC9811C0F61B77100CD3E94 /* TimeIntervalCell.m */; };
 		BAC981650F61CA6500CD3E94 /* ToggleSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC981640F61CA6500CD3E94 /* ToggleSwitchCell.m */; };
+		BAD1D62B0FC4B50D00090104 /* SettingsDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BAD1D6280FC4B50D00090104 /* SettingsDelegate.h */; };
 		BAE687E30F603B98002E9B47 /* TextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE687E20F603B98002E9B47 /* TextfieldCell.m */; };
 		BAEB54350F5DC1D40093BF1B /* SettingsMetadataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEB54340F5DC1D40093BF1B /* SettingsMetadataSource.m */; };
 		BAEB54430F5DC3700093BF1B /* KMTimeIntervalFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEB54410F5DC3700093BF1B /* KMTimeIntervalFormatter.m */; };
@@ -81,6 +82,7 @@
 		BAC9811C0F61B77100CD3E94 /* TimeIntervalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeIntervalCell.m; sourceTree = "<group>"; };
 		BAC981630F61CA6500CD3E94 /* ToggleSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToggleSwitchCell.h; sourceTree = "<group>"; };
 		BAC981640F61CA6500CD3E94 /* ToggleSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToggleSwitchCell.m; sourceTree = "<group>"; };
+		BAD1D6280FC4B50D00090104 /* SettingsDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsDelegate.h; sourceTree = "<group>"; };
 		BAE687E10F603B98002E9B47 /* TextfieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextfieldCell.h; sourceTree = "<group>"; };
 		BAE687E20F603B98002E9B47 /* TextfieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextfieldCell.m; sourceTree = "<group>"; };
 		BAEB54330F5DC1D40093BF1B /* SettingsMetadataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsMetadataSource.h; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				BAEB54340F5DC1D40093BF1B /* SettingsMetadataSource.m */,
 				BAEB547F0F5DEC990093BF1B /* SettingsViewController.h */,
 				BAEB54800F5DEC990093BF1B /* SettingsViewController.m */,
+				BAD1D6280FC4B50D00090104 /* SettingsDelegate.h */,
 			);
 			name = Classes;
 			path = Code/Classes;
@@ -235,6 +238,7 @@
 				BA4B7E4D0F69B8BC00BC932F /* SettingsMetadataSource.h in Headers */,
 				BA4B7E4E0F69B8BC00BC932F /* SettingsViewController.h in Headers */,
 				BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */,
+				BAD1D62B0FC4B50D00090104 /* SettingsDelegate.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
