@@ -32,6 +32,9 @@
 	
 }
 
+@property (nonatomic, readonly) UILabel *titlelabel;
+@property (nonatomic, readonly) UIView *valueview;
+
 /** 
  The editor for this cell.
  Subclasses can set up their editors here. Typically this is a picker view or a number pad.

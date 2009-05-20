@@ -10,14 +10,14 @@
  *******************************************************************************/ 
 
 #import "SettingsMetadataSource.h"
-#import	"SettingsCell.h"
+#import "SettingsCell.h"
 #import "SettingsEditorViewController.h"
 #import "MultiValueEditorViewController.h"
 #import "SettingsCellProtocol.h"
 
 @implementation SettingsMetadataSource
 
-@synthesize title, settings, viewcontroller;
+@synthesize title, settings, viewcontroller, delegate;
 
 NSMutableArray *configurationsForDynamicSections;
 
@@ -167,8 +167,12 @@ NSMutableArray *configurationsForDynamicSections;
 	if (cell == nil) {
 		cell = [SettingsCell cellFromConfiguration:configuration];
 		cell.changedsettings = changedsettings;
+
 		if ([cell respondsToSelector:@selector(cellDidInit)])
 			[cell cellDidInit];
+		
+		if (delegate && [cell isKindOfClass:[SettingsCell class]] && [delegate respondsToSelector:@selector(cellDidInit:)])
+			[(id) delegate cellDidInit:cell];
 	}
 	
 	// Set up the cell...

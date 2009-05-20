@@ -34,10 +34,14 @@
 	NSObject *settings;
 	
 	UIViewController *viewcontroller;
+	
+	NSObject *delegate;
 }
 
 @property (nonatomic, readonly) NSString *title;	/**< The title of the settings view. */
 @property (nonatomic, retain) NSObject *settings;	/**< The object that stores the actual values of the settings. */
+
+@property (nonatomic, assign) NSObject *delegate;
 
 /**
  The controller of the settings view.

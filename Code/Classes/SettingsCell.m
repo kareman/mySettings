@@ -18,7 +18,7 @@
 
 @implementation SettingsCell
 
-@synthesize configuration, changedsettings, value;
+@synthesize configuration, changedsettings, value, titlelabel, valueview;
 
 + (id) cellFromConfiguration:(NSDictionary *)configuration {
 	NSString *settingstype = [configuration objectForKey:@"Type"];
