@@ -127,8 +127,11 @@ NSMutableArray *configurationsForDynamicSections;
 }
 
 - (void) save {
-	[settings setValuesForKeysWithDictionary:changedsettings];
-	
+	if ([changedsettings count]) {
+		[settings setValuesForKeysWithDictionary:changedsettings];
+		if (delegate && [delegate respondsToSelector:@selector(didSaveSettings:)])
+			[delegate didSaveSettings:changedsettings];
+	}
 }
 
 #pragma mark Table view data source methods

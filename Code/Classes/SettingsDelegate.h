@@ -19,5 +19,7 @@
 /** Called right after class has been initialised */
 - (void) cellDidInit:(SettingsCell *)cell;
 
+- (void) didSaveSettings:(NSDictionary *)savedsettings;
+
 @end
 
