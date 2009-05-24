@@ -21,5 +21,9 @@
 
 - (void) didSaveSettings:(NSDictionary *)savedsettings;
 
+- (void) customCellWasSelectedAtIndexPath:(NSIndexPath *)indexpath;
+
+- (void) cellWillAppear:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexpath;
+
 @end
 

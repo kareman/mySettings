@@ -24,6 +24,11 @@
 		cell.configuration = originalcell.configuration;
 		cell.value = originalcell.value;
 		
+		if ([originalcell.backgroundView isKindOfClass:[UIImageView class]]) {
+			UIImageView *backgroundimageview = (UIImageView *) originalcell.backgroundView;
+			cell.backgroundView = [[UIImageView alloc] initWithImage:backgroundimageview.image];
+		}
+		
 		if (delegate && [delegate respondsToSelector:@selector(cellDidInit:)])
 			[delegate cellDidInit:cell];
 	}

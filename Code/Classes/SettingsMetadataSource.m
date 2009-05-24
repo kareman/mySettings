@@ -134,6 +134,22 @@ NSMutableArray *configurationsForDynamicSections;
 	}
 }
 
+#pragma mark Public methods
+
+/** Shows the editor for this cell. */
+- (void) showEditorForCell:(SettingsCell *) cell {
+	SettingsEditorViewController *vc;
+	if ([[cell.configuration objectForKey:@"Type"] isEqualToString:@"PSMultiValueSpecifier"]) {
+		vc = [[MultiValueEditorViewController alloc] initWithCell:cell andDelegate:delegate];
+	}
+	else {
+		vc = [[SettingsEditorViewController alloc] initWithCell:cell andDelegate:delegate];
+	}
+	[viewcontroller.navigationController pushViewController:vc animated:YES];
+	vc.view.backgroundColor = viewcontroller.view.backgroundColor;
+	[vc release];
+}
+
 #pragma mark Table view data source methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -194,28 +210,20 @@ NSMutableArray *configurationsForDynamicSections;
 	else
 		cell.indentationLevel = 0;
 	
+	if (delegate && [delegate respondsToSelector:@selector(cellWillAppear:atIndexPath:)])
+		[delegate cellWillAppear:cell atIndexPath:indexPath];
+	
 	return cell;
 }
 
-/** Shows the editor for this cell. */
-- (void) showEditorForCell:(SettingsCell *) cell {
-    SettingsEditorViewController *vc;
-    if ([[cell.configuration objectForKey:@"Type"] isEqualToString:@"PSMultiValueSpecifier"]) {
-        vc = [[MultiValueEditorViewController alloc] initWithCell:cell andDelegate:delegate];
-    }
-    else {
-        vc = [[SettingsEditorViewController alloc] initWithCell:cell andDelegate:delegate];
-    }
-	[viewcontroller.navigationController pushViewController:vc animated:YES];
-	vc.view.backgroundColor = viewcontroller.view.backgroundColor;
-	[vc release];
+/** Called when the user taps a row. */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (delegate && [delegate respondsToSelector:@selector(customCellWasSelectedAtIndexPath:)]) {
+		NSDictionary *configuration = [self configurationAtIndexPath:indexPath];
+		if ([@"Custom" isEqualToString:(NSString *)[configuration valueForKey:@"Type"]])
+			[delegate customCellWasSelectedAtIndexPath:indexPath];
+	}
 }
 
-/*
-/** Called when the user taps a row. 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
- }
-*/
 
 @end
