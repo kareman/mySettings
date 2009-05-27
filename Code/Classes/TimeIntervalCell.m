@@ -15,16 +15,16 @@
 @implementation TimeIntervalCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
+	if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
 		formatter = [[KMTimeIntervalFormatter alloc] init];
 		formatter.style = KMTimeIntervalFormatterTextStyle;
 		self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 	[formatter release];
 }
 
@@ -64,9 +64,9 @@
 	
 	// update the time interval value
 	self.value = [NSNumber numberWithInt:
-				  (component == 0 ? 
-				   60*row+[pickerView selectedRowInComponent:1] :
-				   60*[pickerView selectedRowInComponent:0]+row)];
+					  (component == 0 ? 
+						60*row+[pickerView selectedRowInComponent:1] :
+						60*[pickerView selectedRowInComponent:0]+row)];
 }
 
 // tell the picker how many components it will have

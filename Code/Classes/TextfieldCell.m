@@ -18,9 +18,9 @@
 
 - (id) initWithReuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
-
+		
 		valuetextfield = [[UITextField alloc] initWithFrame:CGRectMake(0, 11, 0, 25)];
-
+		
 		valuetextfield.textColor = valuelabel.textColor;
 		valuetextfield.font = valuelabel.font;
 		
@@ -29,7 +29,7 @@
 		valuetextfield.returnKeyType = UIReturnKeyDone;
 		valuetextfield.enablesReturnKeyAutomatically = YES;
 		[valuetextfield setDelegate:self];
-
+		
 		[valuelabel removeFromSuperview];
 		[self.contentView addSubview:valuetextfield];
 		valueview = valuetextfield;
@@ -38,7 +38,7 @@
 }
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 	[valuetextfield release];
 }
 
@@ -55,7 +55,7 @@
 #pragma mark Text Field Delegate Methods
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {	
-    super.value = textField.text;
+	super.value = textField.text;
 	//[changedsettings setObject:textField.text forKey:[configuration valueForKey:@"Key"]];
 	return YES;
 }

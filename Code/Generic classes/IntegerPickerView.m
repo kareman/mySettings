@@ -17,15 +17,15 @@
 @synthesize minimumValue, maximumValue, value;
 
 - (id)init {
-    if (self = [super init]) {
-        // Initialization code
+	if (self = [super init]) {
+		// Initialization code
 		self.delegate = self;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 }
 
 - (void) setValue:(int)newvalue {

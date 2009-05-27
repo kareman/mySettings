@@ -11,10 +11,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class SettingsViewController;
+
 @interface mySettingsAppDelegate : NSObject <UIApplicationDelegate> {
-    
-    UIWindow *window;
-    UINavigationController *navigationController;
+	
+	UIWindow *window;
+	UINavigationController *navigationController;
+	
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

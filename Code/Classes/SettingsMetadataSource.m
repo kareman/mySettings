@@ -20,8 +20,6 @@
 
 @synthesize title, settings, viewcontroller, delegate;
 
-NSMutableArray *configurationsForDynamicSections;
-
 #pragma mark Private Methods
 
 // retrieves configuration from plist
@@ -57,7 +55,7 @@ NSMutableArray *configurationsForDynamicSections;
 				[sections addObject:configuration];
 			} else 			
 				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
-
+			
 			[sectiontitles addObject:[item valueForKey:@"Title"]];
 		} 
 		// if not, add the item to current section 
@@ -70,10 +68,10 @@ NSMutableArray *configurationsForDynamicSections;
 			 even those values that aren't changed by the user. */
 			NSString *key = [item valueForKey:@"Key"];
 			if (key && ![settings valueForKey:key])
-				/* set value to an empty string if it's not already defined */
+			/* set value to an empty string if it's not already defined */
 				[settings setValue:
 				 ([item valueForKey:@"DefaultValue"] ? [item valueForKey:@"DefaultValue"] : @"")
-							forKey:key];
+								forKey:key];
 		}
 		
 	}
@@ -119,7 +117,7 @@ NSMutableArray *configurationsForDynamicSections;
 }
 
 - (void) dealloc {
-    [super dealloc];
+	[super dealloc];
 	[sections release];
 	[sectiontitles release];
 	[changedsettings release];
@@ -153,7 +151,7 @@ NSMutableArray *configurationsForDynamicSections;
 #pragma mark Table view data source methods
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return sections.count;
+	return sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -179,15 +177,15 @@ NSMutableArray *configurationsForDynamicSections;
 	NSDictionary *configuration = [self configurationAtIndexPath:indexPath];
 	NSString *settingstype = [configuration valueForKey:@"Type"];
 	NSString *identifier = ([settingstype isEqualToString:@"Custom"] 
-							? [configuration objectForKey:@"CustomCell"] 
-							: settingstype);
-		
+									? [configuration objectForKey:@"CustomCell"] 
+									: settingstype);
+	
 	UITableViewCell<SettingsCellProtocol> *cell = 
-		(UITableViewCell<SettingsCellProtocol> *)[tableView dequeueReusableCellWithIdentifier:identifier];
+	(UITableViewCell<SettingsCellProtocol> *)[tableView dequeueReusableCellWithIdentifier:identifier];
 	if (cell == nil) {
 		cell = [SettingsCell cellFromConfiguration:configuration];
 		cell.changedsettings = changedsettings;
-
+		
 		if ([cell respondsToSelector:@selector(cellDidInit)])
 			[cell cellDidInit];
 		
@@ -204,7 +202,7 @@ NSMutableArray *configurationsForDynamicSections;
 		cell.value = [array objectAtIndex:indexPath.row];
 	} else
 		cell.value = [settings valueForKey:[configuration valueForKey:@"Key"]];
-
+	
 	if ([configuration valueForKey:@"IndentLevel"])
 		cell.indentationLevel = [(NSNumber *)[configuration valueForKey:@"IndentLevel"] intValue];
 	else

@@ -16,13 +16,13 @@
 @synthesize configuration, value, changedsettings;
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier]) {
+	if (self = [super initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier]) {
 		label = [[UILabel alloc] initWithFrame:CGRectZero];
 		label.textAlignment = UITextAlignmentCenter;
 		label.font = [UIFont systemFontOfSize:10];
 		[self.contentView addSubview:label];
    }
-    return self;
+	return self;
 }
 
 - (void)dealloc {
@@ -35,19 +35,19 @@
 	
 	CGRect titleframe = label.frame;
 	titleframe.origin.x = 10;
-
+	
 	titleframe.size.width = self.contentView.frame.size.width - 20;
 	titleframe.size.height = self.contentView.frame.size.height;
 	
 	label.frame = titleframe;
 }
 /*
-- (void) setConfiguration:(NSDictionary *)config {
-	configuration = config;
-	label.text = [configuration objectForKey:@"Title"];
-
-}
-*/
+ - (void) setConfiguration:(NSDictionary *)config {
+ configuration = config;
+ label.text = [configuration objectForKey:@"Title"];
+ 
+ }
+ */
 
 - (void) setValue:(NSObject *)newvalue {
 	value = newvalue;

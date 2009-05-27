@@ -17,10 +17,8 @@
 @synthesize window;
 @synthesize navigationController;
 
-SettingsViewController *settingsviewcontroller;
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
-//	[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:15] forKey:@"d"];
+	//	[[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithInt:15] forKey:@"d"];
 	NSUserDefaults *userdefaults = [NSUserDefaults standardUserDefaults];
 	if (![userdefaults arrayForKey:@"array"])
 		[userdefaults setValue:[NSArray arrayWithObjects:@"Custom cells can do what they want",@"All this is from an array of strings",@"Pretty cool, huh?!", nil] forKey:@"array"];
@@ -29,7 +27,7 @@ SettingsViewController *settingsviewcontroller;
 	SettingsViewController *settingsviewcontroller = [[SettingsViewController alloc] initWithConfigFile:plist];
 	[navigationController pushViewController:settingsviewcontroller animated:YES];
 	[settingsviewcontroller release];
-
+	
 	// Configure and show the window
 	[window addSubview:[navigationController view]];
 	[window makeKeyAndVisible];
@@ -42,7 +40,7 @@ SettingsViewController *settingsviewcontroller;
 
 - (void)dealloc {
 	[navigationController release];
-	[settingsviewcontroller release];
+
 	[window release];
 	[super dealloc];
 }

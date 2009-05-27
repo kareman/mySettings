@@ -35,7 +35,7 @@
 	NSObject *settings;
 	
 	UIViewController *viewcontroller;
-	
+	NSMutableArray *configurationsForDynamicSections;
 	NSObject<SettingsDelegate> *delegate;
 }
 

@@ -16,15 +16,15 @@
 @implementation NumberCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
-        // Initialization code
+	if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
+		// Initialization code
 		self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 }
 
 - (void) setValue:(NSObject *)newvalue {
@@ -32,7 +32,7 @@
 	
 	NSString *formatstring = [configuration objectForKey:@"FormatString"];
 	valuelabel.text = [NSString stringWithFormat: 
-					   (formatstring ? formatstring : @"%@"), self.value];
+							 (formatstring ? formatstring : @"%@"), self.value];
 }
 
 
@@ -40,7 +40,7 @@
 - (UIView *) editorview {
 	IntegerPickerView *editorview = [[IntegerPickerView alloc] init];
 	editorview.showsSelectionIndicator = YES;
-//	[editorview addLabel:<#(NSString *)labeltext#> forComponent:<#(NSUInteger)component#>
+	//	[editorview addLabel:<#(NSString *)labeltext#> forComponent:<#(NSUInteger)component#>
 	
 	// set the picker view to show the current number
 	editorview.minimumValue = [(NSNumber *)[configuration valueForKey:@"MinValue"] intValue];
@@ -52,9 +52,9 @@
 }
 
 /*
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-	self.value = [NSNumber numberWithInt:((IntegerPickerView *) object).value];
-}
-*/
+ - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+ self.value = [NSNumber numberWithInt:((IntegerPickerView *) object).value];
+ }
+ */
 
 @end

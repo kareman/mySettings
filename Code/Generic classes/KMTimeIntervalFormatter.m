@@ -28,7 +28,7 @@
 - (NSString *)stringForObjectValue:(id)intervalnumber {
 	NSTimeInterval interval = [(NSNumber *) intervalnumber doubleValue];
 	return [self stringForTimeInterval:interval];
-
+	
 }
 
 - (BOOL)getObjectValue:(id *)anObject forString:(NSString *)string errorDescription:(NSString **)error {
@@ -49,15 +49,15 @@
 		case KMTimeIntervalFormatterDigitsStyle:
 			if (hours > 0)
 				return [[NSString stringWithFormat: @"%@%d:%@%d:%@%d",
-						(hours < 10 ? @"0" : @""), hours,
-						(minutes < 10 ? @"0" : @""), minutes,
-						(seconds < 10 ? @"0" : @""), seconds] autorelease];
+							(hours < 10 ? @"0" : @""), hours,
+							(minutes < 10 ? @"0" : @""), minutes,
+							(seconds < 10 ? @"0" : @""), seconds] autorelease];
 			else 
 				return [NSString stringWithFormat: @"%@%d:%@%d",
-						(minutes < 10 ? @"0" : @""), minutes,
-						(seconds < 10 ? @"0" : @""), seconds];			
+						  (minutes < 10 ? @"0" : @""), minutes,
+						  (seconds < 10 ? @"0" : @""), seconds];			
 			break;
-		
+			
 		case KMTimeIntervalFormatterTextStyle:
 			NSAssert(hours == 0, @"not implemented");
 			

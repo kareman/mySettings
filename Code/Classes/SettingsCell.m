@@ -40,10 +40,10 @@
 	
 	if ([settingstype isEqualToString:@"PSToggleSwitchSpecifier"])
 		return [[[ToggleSwitchCell alloc] initWithReuseIdentifier:settingstype] autorelease];
-
+	
    if ([settingstype isEqualToString:@"PSMultiValueSpecifier"])
 		return [[[MultiValueCell alloc] initWithReuseIdentifier:settingstype] autorelease];
-
+	
 	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;
 }
@@ -54,7 +54,7 @@
 }
 
 - (id)initWithTitlelabel:(BOOL)hastitlelabel reuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier]) {
+	if (self = [super initWithFrame:CGRectZero reuseIdentifier:reuseIdentifier]) {
 		if(hastitlelabel) {
 			// set up label for titles
 			titlelabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -66,8 +66,8 @@
 			[self.contentView addSubview:titlelabel];
 			[titlelabel release];
 		}
-    }
-    return self;
+	}
+	return self;
 }
 
 - (id)initWithValuelabelAndReuseIdentifier:(NSString *)reuseIdentifier {

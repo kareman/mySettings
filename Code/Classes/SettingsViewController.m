@@ -20,30 +20,30 @@
 	settingsdatasource.viewcontroller = self;
 	
 	/* NB: selectors are fake*/
-/*	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:settingsdatasource action:@selector(save:)];
-	
-	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:settingsdatasource action:@selector(save:)];
-*/
+	/*	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:settingsdatasource action:@selector(save:)];
+	 
+	 self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:settingsdatasource action:@selector(save:)];
+	 */
 }
 
 - (id)initWithConfigFile:(NSString *)configfile {
 	if (self = [super initWithStyle:UITableViewStyleGrouped]) {
 		settingsdatasource = [[SettingsMetadataSource alloc] initWithConfigFile:configfile];
 		[self setup];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (id) initWithConfigFile:(NSString *)configfile andSettings:(NSObject *)newsettings {
 	if (self = [super initWithStyle:UITableViewStyleGrouped]) {
 		settingsdatasource = [[SettingsMetadataSource alloc] initWithConfigFile:configfile andSettings:newsettings];
 		[self setup];
-    }
-    return self;	
+	}
+	return self;	
 }
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 	[settingsdatasource release];
 }
 
@@ -54,30 +54,30 @@
 #pragma mark View
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+   [super viewDidLoad];
 	self.tableView.delegate = settingsdatasource;
 	self.tableView.dataSource = settingsdatasource;
-
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	
+	// Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+	// self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 /*
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-}
-*/
+ - (void)viewWillAppear:(BOOL)animated {
+ [super viewWillAppear:animated];
+ }
+ */
 
 /*
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-}
-*/
+ - (void)viewDidAppear:(BOOL)animated {
+ [super viewDidAppear:animated];
+ }
+ */
 /*
-- (void)viewWillDisappear:(BOOL)animated {
-	[super viewWillDisappear:animated];
-}
-*/
+ - (void)viewWillDisappear:(BOOL)animated {
+ [super viewWillDisappear:animated];
+ }
+ */
 
 - (void)viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
@@ -86,19 +86,19 @@
 
 
 /*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
+ // Override to allow orientations other than the default portrait orientation.
+ - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+ // Return YES for supported orientations
+ return (interfaceOrientation == UIInterfaceOrientationPortrait);
+ }
+ */
 
 /*
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
-    // Release anything that's not essential, such as cached data
-}
-*/
+ - (void)didReceiveMemoryWarning {
+ [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
+ // Release anything that's not essential, such as cached data
+ }
+ */
 
 
 @end

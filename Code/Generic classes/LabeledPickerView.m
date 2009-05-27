@@ -18,18 +18,18 @@
 
 /** loading programmatically */
 - (id)initWithFrame:(CGRect)aRect {
-    if (self = [super initWithFrame:aRect]) {
+	if (self = [super initWithFrame:aRect]) {
 		labels = [[NSMutableDictionary alloc] initWithCapacity:3];
-    }
-    return self;
+	}
+	return self;
 }
 
 /** loading from nib */
 - (id)initWithCoder:(NSCoder *)coder {
-    if (self = [super initWithCoder:coder]) {
+	if (self = [super initWithCoder:coder]) {
 		labels = [[NSMutableDictionary alloc] initWithCapacity:3];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void) dealloc
@@ -48,7 +48,7 @@
 	[labels setObject:labeltext forKey:[NSNumber numberWithInt:component]];
 	
 	NSString *keyName = [NSString stringWithFormat:@"%@_%@", [NSString stringWithString:@"longestString"], [NSNumber numberWithInt:component]]; 
-
+	
 	if(!longestString) {
 		longestString = labeltext;
 	}
@@ -60,15 +60,15 @@
 - (void) updateLabel:(NSString *)labeltext forComponent:(NSUInteger)component {
 	
 	UILabel *theLabel = (UILabel*)[self viewWithTag:component + 1];
-		
+	
 	// Update label if it doesn’t match current label
 	if (theLabel.text != labeltext) {
 		
 		NSString *keyName = [NSString stringWithFormat:@"%@_%@", [NSString stringWithString:@"longestString"], [NSNumber numberWithInt:component]]; 
 		NSString *longestString = [labels objectForKey:keyName];
-
+		
 		[self addLabel:labeltext forComponent:component forLongestString:longestString]; // Update label array with our new string value
-
+		
 		[self refreshLabels]; // redraw our label
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.75];
@@ -77,7 +77,7 @@
 		theLabel.alpha = 1.00;
 		[UIView commitAnimations];
 	}
-
+	
 }
 
 // used after you have removed a labelView and just want to add it back in as is - i.e. after a rotation
@@ -85,19 +85,19 @@
 	[self didMoveToWindow]; // redraw our labels
 }
 /*
-- (void)layoutSubviews {
-	NSLog(@"Layout Subviews called");
-	//[self didMoveToWindow];
-	[super layoutSubviews];
-}
-*/
+ - (void)layoutSubviews {
+ NSLog(@"Layout Subviews called");
+ //[self didMoveToWindow];
+ [super layoutSubviews];
+ }
+ */
 - (void) removeLabelView:(NSUInteger)component {
 	UILabel *theLabel = (UILabel*)[self viewWithTag:component+1];
 	if (theLabel) {
 		[theLabel removeFromSuperview];
 	}
 }
-		
+
 /** 
  Adds the labels to the view, below the selection indicator glass-thingy.
  The labels are aligned to the right side of the wheel.
@@ -159,7 +159,7 @@
 			// Tag cannot be 0 so just increment component number to esnure we get a positive
 			// NB update/remove Label methods are aware of this incrementation!
 			label.tag = component + 1;
-
+			
 			if(addlabelView) {
 				/* 
 				 and now for the tricky bit: adding the label to the view.
@@ -178,11 +178,11 @@
 					[self addSubview:label];
 				
 			}
-		[self.delegate pickerView:self didSelectRow:[self selectedRowInComponent:component] inComponent:component];
+			[self.delegate pickerView:self didSelectRow:[self selectedRowInComponent:component] inComponent:component];
 		}
-	
+		
 	}
-
+	
 }
 
 @end

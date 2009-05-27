@@ -15,18 +15,18 @@
 @implementation ToggleSwitchCell
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
-    if (self = [super initWithTitlelabel:YES reuseIdentifier:reuseIdentifier]) {
-        // Initialization code
+	if (self = [super initWithTitlelabel:YES reuseIdentifier:reuseIdentifier]) {
+		
 		UISwitch *switchview = [[UISwitch alloc] initWithFrame:CGRectZero];
 		valueview = switchview;
 		[switchview addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
 		[self.contentView addSubview:valueview];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)dealloc {
-    [super dealloc];
+	[super dealloc];
 }
 
 - (void) setConfiguration:(NSDictionary *)config {
@@ -36,7 +36,7 @@
 - (void) setValue:(NSObject *)newvalue {
 	super.value = newvalue;
 	((UISwitch *) valueview).on = [(NSNumber *)newvalue boolValue];
-
+	
 }
 
 - (void) valueChanged {
