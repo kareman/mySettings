@@ -178,6 +178,7 @@
 		BAC97FC60F6165AE00CD3E94 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */,
 				BAC97FC80F6165D500CD3E94 /* SettingsCell.h */,
 				BAC97FC90F6165D500CD3E94 /* SettingsCell.m */,
 				BAB41FCE0F800E3D00ED3822 /* MultiValueCell.h */,
@@ -190,7 +191,6 @@
 				BAC9811C0F61B77100CD3E94 /* TimeIntervalCell.m */,
 				BAC981630F61CA6500CD3E94 /* ToggleSwitchCell.h */,
 				BAC981640F61CA6500CD3E94 /* ToggleSwitchCell.m */,
-				BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -429,7 +429,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

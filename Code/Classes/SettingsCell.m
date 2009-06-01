@@ -98,6 +98,7 @@
 }
 
 - (void)dealloc {
+	[value release];
    [super dealloc];
 }
 

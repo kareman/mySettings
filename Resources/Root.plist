@@ -19,6 +19,8 @@
 			<string>Test settings</string>
 			<key>Key</key>
 			<string>title</string>
+			<key>AllowLeadingSpaces</key>
+			<false/>
 		</dict>
 		<dict>
 			<key>Title</key>

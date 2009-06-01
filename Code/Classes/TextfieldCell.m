@@ -53,11 +53,28 @@
 }
 
 #pragma mark Text Field Delegate Methods
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+
+	if ([(NSNumber *)[configuration objectForKey:@"AllowLeadingSpaces"] boolValue])
+		return YES;
+	
+	// Avoid starting text with space
+	if (range.location == 0 && [string isEqualToString:@" "] )
+		return NO;
+	else
+		return YES;
+}
+
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {	
-	super.value = textField.text;
-	//[changedsettings setObject:textField.text forKey:[configuration valueForKey:@"Key"]];
-	return YES;
+	
+	NSString *trimmedtext = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+	if ([trimmedtext length] > 0) {
+		super.value = trimmedtext;
+		return YES;
+	} 
+	
+	return NO;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
