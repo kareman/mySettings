@@ -17,7 +17,6 @@
 
 - (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
-		// Initialization code
 		self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	return self;
@@ -40,7 +39,6 @@
 - (UIView *) editorview {
 	IntegerPickerView *editorview = [[IntegerPickerView alloc] init];
 	editorview.showsSelectionIndicator = YES;
-	//	[editorview addLabel:<#(NSString *)labeltext#> forComponent:<#(NSUInteger)component#>
 	
 	// set the picker view to show the current number
 	editorview.minimumValue = [(NSNumber *)[configuration valueForKey:@"MinValue"] intValue];
@@ -50,11 +48,5 @@
 	
 	return [editorview autorelease];
 }
-
-/*
- - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
- self.value = [NSNumber numberWithInt:((IntegerPickerView *) object).value];
- }
- */
 
 @end

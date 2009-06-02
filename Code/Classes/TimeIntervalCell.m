@@ -27,8 +27,8 @@
 }
 
 - (void)dealloc {
-	[super dealloc];
 	[formatter release];
+	[super dealloc];
 }
 
 - (void) setValue:(NSObject *)newvalue {
