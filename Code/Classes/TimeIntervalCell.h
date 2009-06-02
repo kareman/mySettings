@@ -17,6 +17,8 @@
 	
 	/** for formatting the time interval value into text */
 	KMTimeIntervalFormatter *formatter;	
+	
+	NSUInteger componentstartswith[2];
 }
 
 @end

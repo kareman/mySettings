@@ -368,8 +368,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kåre Morstøl";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kåre Morstøl";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -377,7 +377,8 @@
 				GCC_PREFIX_HEADER = mySettings_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = mySettings;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8751A286-1FD6-454F-B509-AE9C8BFF2685";
+				PROVISIONING_PROFILE = "4C447118-00E9-47C3-AD78-85CF68C06D03";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C447118-00E9-47C3-AD78-85CF68C06D03";
 			};
 			name = Debug;
 		};
@@ -428,14 +429,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Don't Code Sign";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kåre Morstøl";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kåre Morstøl";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "";
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "4C447118-00E9-47C3-AD78-85CF68C06D03";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C447118-00E9-47C3-AD78-85CF68C06D03";
 				SDKROOT = iphoneos2.2.1;
 			};
 			name = Debug;

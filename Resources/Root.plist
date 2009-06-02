@@ -50,13 +50,15 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Time</string>
+			<string>Time (&gt; 0)</string>
 			<key>Type</key>
 			<string>TimeInterval</string>
 			<key>DefaultValue</key>
 			<integer>4</integer>
 			<key>Key</key>
 			<string>timeinterval</string>
+			<key>CannotBeZero</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>Title</key>
