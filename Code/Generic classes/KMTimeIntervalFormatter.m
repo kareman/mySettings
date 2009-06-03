@@ -48,10 +48,10 @@
 	switch (style) {
 		case KMTimeIntervalFormatterDigitsStyle:
 			if (hours > 0)
-				return [[NSString stringWithFormat: @"%@%d:%@%d:%@%d",
+				return [NSString stringWithFormat: @"%@%d:%@%d:%@%d",
 							(hours < 10 ? @"0" : @""), hours,
 							(minutes < 10 ? @"0" : @""), minutes,
-							(seconds < 10 ? @"0" : @""), seconds] autorelease];
+							(seconds < 10 ? @"0" : @""), seconds];
 			else 
 				return [NSString stringWithFormat: @"%@%d:%@%d",
 						  (minutes < 10 ? @"0" : @""), minutes,
