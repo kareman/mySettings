@@ -67,9 +67,10 @@
 		NSString *keyName = [NSString stringWithFormat:@"%@_%@", @"longestString", [NSNumber numberWithInt:component]]; 
 		NSString *longestString = [labels objectForKey:keyName];
 		
-		[self addLabel:labeltext forComponent:component forLongestString:longestString]; // Update label array with our new string value
-		
-		//[self refreshLabels]; // redraw our label
+		// Update label array with our new string value
+		[self addLabel:labeltext forComponent:component forLongestString:longestString];		
+
+		// change label during fade out/in
 		[UIView beginAnimations:nil context:NULL];
 		[UIView setAnimationDuration:0.75];
 		[UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
@@ -79,25 +80,6 @@
 		[UIView commitAnimations];
 	}
 	
-}
-/*
-// used after you have removed a labelView and just want to add it back in as is - i.e. after a rotation
-- (void) refreshLabels {
-	//[self didMoveToWindow]; // redraw our labels
-}
- */
-/*
- - (void)layoutSubviews {
- NSLog(@"Layout Subviews called");
- //[self didMoveToWindow];
- [super layoutSubviews];
- }
- */
-- (void) removeLabelView:(NSUInteger)component {
-	UILabel *theLabel = (UILabel*)[self viewWithTag:component+1];
-	if (theLabel) {
-		[theLabel removeFromSuperview];
-	}
 }
 
 /** 
@@ -137,8 +119,10 @@
 			NSString *longestString = [labels objectForKey:keyName];
 			CGRect frame;
 			frame.size = [longestString sizeWithFont:labelfont];
+			
 			// center it vertically 
 			frame.origin.y = (self.frame.size.height / 2) - (frame.size.height / 2) - 0.5;
+			
 			// align it to the right side of the wheel, with a margin.
 			// use a smaller margin for the rightmost wheel.
 			frame.origin.x = rightsideofwheel - frame.size.width - 
