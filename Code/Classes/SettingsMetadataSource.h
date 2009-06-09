@@ -78,4 +78,6 @@
  */
 - (void) showEditorForCell:(SettingsCell *) cell;
 
+- (NSDictionary *) configurationAtIndexPath:(NSIndexPath *)indexpath;
+
 @end
