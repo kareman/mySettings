@@ -45,11 +45,14 @@
 - (void) loadView {
 	[super loadView];
 	
-	// the area below the navigation bar 
+	// find the visible frame between navigation controller and tab bar controller 
 	CGRect visibleframe = self.view.frame;
-	visibleframe.size.height = visibleframe.size.height - self.navigationController.navigationBar.frame.size.height;
+	if (self.navigationController)
+		visibleframe.size.height = visibleframe.size.height - self.navigationController.navigationBar.frame.size.height;
+	if (self.tabBarController)
+		visibleframe.size.height = visibleframe.size.height - self.tabBarController.view.frame.size.height;
 	visibleframe.origin.y = 0;
-	
+
 	// place editor view at the bottom
 	UIView *editorview = cell.editorview;
 	CGRect editorframe = editorview.frame;
@@ -76,7 +79,6 @@
 	
 	self.title = [[cell configuration] objectForKey:@"Title"];
 }
-
 
 /*
  - (void)viewWillAppear:(BOOL)animated {
