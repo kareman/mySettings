@@ -51,7 +51,9 @@
 		if ([type isEqualToString:@"PSGroupSpecifier"]) {
 			if([item valueForKey:@"Key"]) {
 				NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithDictionary:[item valueForKey:@"PreferenceSpecifiers"]];
-				[configuration setValue:[item valueForKey:@"Key"] forKey:@"_ArrayKeyPath"];
+				NSString *ArrayKeyPath = [item valueForKey:@"Key"];
+				[configuration setValue:ArrayKeyPath forKey:@"_ArrayKeyPath"];
+				[configuration setValue:[settings valueForKeyPath:ArrayKeyPath] forKey:@"_Array"];
 				[sections addObject:configuration];
 			} else 			
 				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
@@ -156,16 +158,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	NSObject *configuration = [sections objectAtIndex:section];
-	if ([configuration isKindOfClass:[NSArray class]]) {
+	if ([configuration isKindOfClass:[NSDictionary class]]) {
+		/*
+		 NSString *key = (NSString *)[(NSDictionary *)configuration valueForKey:@"_ArrayKeyPath"]; 
+		 NSArray *array = (NSArray *)[settings valueForKeyPath:key];
+		 */
+		NSArray *array = (NSArray *)[configuration valueForKey:@"_Array"];
+		return [array count];
+	} else {
 		return [(NSArray *)configuration count];
 	}
-	else if ([configuration isKindOfClass:[NSDictionary class]]) {
-		NSString *key = (NSString *)[(NSDictionary *)configuration valueForKey:@"_ArrayKeyPath"]; 
-		NSArray *array = (NSArray *)[settings valueForKeyPath:key];
-		return [array count];
-	}
-	NSAssert(FALSE, @"not implemented"); 
-	return 0;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -196,9 +198,12 @@
 	// Set up the cell...
 	cell.configuration = configuration;
 	
-	if ([configuration valueForKey:@"_ArrayKeyPath"]) {
+	if ([configuration valueForKey:@"_Array"]) {
+		/*
 		NSString *key = [configuration valueForKey:@"_ArrayKeyPath"];
 		NSArray *array = [settings valueForKeyPath:key];
+		 */
+		NSArray *array = (NSArray *)[configuration valueForKey:@"_Array"];
 		cell.value = [array objectAtIndex:indexPath.row];
 	} else
 		cell.value = [settings valueForKey:[configuration valueForKey:@"Key"]];
