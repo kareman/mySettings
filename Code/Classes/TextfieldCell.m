@@ -49,10 +49,11 @@
 
 - (void) setValue:(NSObject *)newvalue {
 	super.value = newvalue;
-	valuetextfield.text =  (NSString *) self.value;
+	valuetextfield.text = (NSString *) self.value;
 }
 
 #pragma mark Text Field Delegate Methods
+
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 
 	if ([(NSNumber *)[configuration objectForKey:@"AllowLeadingSpaces"] boolValue])
@@ -65,16 +66,14 @@
 		return YES;
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-{	
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
 	
 	NSString *trimmedtext = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	if ([trimmedtext length] > 0) {
 		super.value = trimmedtext;
 		return YES;
-	} 
-	
-	return NO;
+	} else
+		return NO;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
