@@ -48,6 +48,9 @@
 		BAEB54810F5DEC990093BF1B /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAEB54800F5DEC990093BF1B /* SettingsViewController.m */; };
 		BAEB549B0F5DF0940093BF1B /* Root.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAEB549A0F5DF0940093BF1B /* Root.plist */; };
 		BAFAB3970F6836F300FDB4AF /* SettingsEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFAB3960F6836F300FDB4AF /* SettingsEditorViewController.m */; };
+		BAFCDC900FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFCDC8F0FEBE76A00EEE2B7 /* MutableMetadataSource.m */; };
+		BAFCDC910FEBE76A00EEE2B7 /* MutableMetadataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = BAFCDC8E0FEBE76A00EEE2B7 /* MutableMetadataSource.h */; };
+		BAFCDC920FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BAFCDC8F0FEBE76A00EEE2B7 /* MutableMetadataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +97,8 @@
 		BAEB549A0F5DF0940093BF1B /* Root.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Root.plist; sourceTree = "<group>"; };
 		BAFAB3950F6836F300FDB4AF /* SettingsEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsEditorViewController.h; sourceTree = "<group>"; };
 		BAFAB3960F6836F300FDB4AF /* SettingsEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsEditorViewController.m; sourceTree = "<group>"; };
+		BAFCDC8E0FEBE76A00EEE2B7 /* MutableMetadataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MutableMetadataSource.h; sourceTree = "<group>"; };
+		BAFCDC8F0FEBE76A00EEE2B7 /* MutableMetadataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MutableMetadataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +210,8 @@
 				BAFAB3960F6836F300FDB4AF /* SettingsEditorViewController.m */,
 				BAEB54330F5DC1D40093BF1B /* SettingsMetadataSource.h */,
 				BAEB54340F5DC1D40093BF1B /* SettingsMetadataSource.m */,
+				BAFCDC8E0FEBE76A00EEE2B7 /* MutableMetadataSource.h */,
+				BAFCDC8F0FEBE76A00EEE2B7 /* MutableMetadataSource.m */,
 				BAEB547F0F5DEC990093BF1B /* SettingsViewController.h */,
 				BAEB54800F5DEC990093BF1B /* SettingsViewController.m */,
 				BAD1D6280FC4B50D00090104 /* SettingsDelegate.h */,
@@ -239,6 +246,7 @@
 				BA4B7E4E0F69B8BC00BC932F /* SettingsViewController.h in Headers */,
 				BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */,
 				BAD1D62B0FC4B50D00090104 /* SettingsDelegate.h in Headers */,
+				BAFCDC910FEBE76A00EEE2B7 /* MutableMetadataSource.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +346,7 @@
 				BA319EB50F79801800121BB9 /* TestCustomCell.m in Sources */,
 				BAB41FCF0F800E3D00ED3822 /* MultiValueCell.m in Sources */,
 				BAB41FD00F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */,
+				BAFCDC900FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +367,7 @@
 				BABC18FE0F6C081800B22382 /* IntegerPickerView.m in Sources */,
 				BAB41FD10F800E3D00ED3822 /* MultiValueCell.m in Sources */,
 				BAB41FD20F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */,
+				BAFCDC920FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
