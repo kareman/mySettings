@@ -52,13 +52,24 @@
 
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	return (indexPath.row == [[self dataArrayForSection:indexPath.section] count]) ? UITableViewCellEditingStyleInsert : UITableViewCellEditingStyleDelete;
+	if (!tableView.editing)
+		// turn of swipe-to-delete, which doesn't work
+		return UITableViewCellEditingStyleNone;
+	else
+		return (indexPath.row == [[self dataArrayForSection:indexPath.section] count]) ? UITableViewCellEditingStyleInsert : UITableViewCellEditingStyleDelete;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	
+	/*
+	NSLog(@"%b",tableView.editing);
 	return [super tableView:tableView numberOfRowsInSection:section] + ((tableView.editing && [self dataArrayForSection:section]) ? 1 : 0);
-	
+	*/
+	NSMutableArray *array = [self dataArrayForSection:section];
+	if (array) {
+		return [array count] + ((tableView.editing) ? 1 : 0);
+	}
+	else
+		return [super tableView:tableView numberOfRowsInSection:section];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
