@@ -27,10 +27,10 @@
 }
 
 - (NSIndexPath *) tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
-	
+
 	if (proposedDestinationIndexPath.section < sourceIndexPath.section)
 		return [NSIndexPath indexPathForRow:0 inSection:sourceIndexPath.section];
-	else if (proposedDestinationIndexPath.row == [tableView numberOfRowsInSection:proposedDestinationIndexPath.section])
+	else if (proposedDestinationIndexPath.row == [tableView numberOfRowsInSection:proposedDestinationIndexPath.section]-1)
 		return [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row-1 inSection:sourceIndexPath.section];
 	else
 		return proposedDestinationIndexPath;

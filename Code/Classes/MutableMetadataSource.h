@@ -14,4 +14,6 @@
 
 }
 
+- (NSMutableArray *) dataArrayForSection:(NSUInteger)section;
+
 @end
