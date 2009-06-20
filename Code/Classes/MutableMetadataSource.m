@@ -20,6 +20,19 @@
 		return nil;
 }
 
+- (void) tableView:(UITableView *)tableView setEditing:(BOOL)editing {
+	NSArray *array;
+	for (int i = 0; i<[tableView numberOfSections]; i++)
+		if (array = [self dataArrayForSection:i]) {
+			if (editing)
+				[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[array count] inSection:i]] withRowAnimation:UITableViewRowAnimationFade];
+			else
+				[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[array count] inSection:i]] withRowAnimation: UITableViewRowAnimationFade];
+		}
+}
+
+#pragma mark UITableView delegate methods
+
 - (BOOL) tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	NSMutableArray *array = [self dataArrayForSection:indexPath.section];
@@ -27,7 +40,7 @@
 }
 
 - (NSIndexPath *) tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath {
-
+	
 	if (proposedDestinationIndexPath.section < sourceIndexPath.section)
 		return [NSIndexPath indexPathForRow:0 inSection:sourceIndexPath.section];
 	else if (proposedDestinationIndexPath.row == [tableView numberOfRowsInSection:proposedDestinationIndexPath.section]-1)
@@ -60,15 +73,11 @@
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	/*
-	NSLog(@"%b",tableView.editing);
-	return [super tableView:tableView numberOfRowsInSection:section] + ((tableView.editing && [self dataArrayForSection:section]) ? 1 : 0);
-	*/
+	
 	NSMutableArray *array = [self dataArrayForSection:section];
 	if (array) {
 		return [array count] + ((tableView.editing) ? 1 : 0);
-	}
-	else
+	} else
 		return [super tableView:tableView numberOfRowsInSection:section];
 }
 
