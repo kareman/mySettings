@@ -13,7 +13,7 @@
 #import "SettingsCell.h"
 #import "SettingsEditorViewController.h"
 #import "MultiValueEditorViewController.h"
-#import "SettingsCellProtocol.h"
+//#import "SettingsCellProtocol.h"
 #import "SettingsDelegate.h"
 
 @implementation SettingsMetadataSource
@@ -51,9 +51,14 @@
 		if ([type isEqualToString:@"PSGroupSpecifier"]) {
 			if([item valueForKey:@"Key"]) {
 				NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithDictionary:[item valueForKey:@"PreferenceSpecifiers"]];
-				NSString *ArrayKeyPath = [item valueForKey:@"Key"];
-				[configuration setValue:ArrayKeyPath forKey:@"_ArrayKeyPath"];
-				[configuration setValue:[settings valueForKeyPath:ArrayKeyPath] forKey:@"_Array"];
+				NSString *arrayKeyPath = [item valueForKey:@"Key"];
+				[configuration setValue:arrayKeyPath forKey:@"_ArrayKeyPath"];
+				
+				NSMutableArray *array = (NSMutableArray *)[settings valueForKeyPath:arrayKeyPath];
+				if ([settings isKindOfClass:[NSUserDefaults class]])
+					[configuration setValue:[NSMutableArray arrayWithArray:array] forKey:@"_Array"];
+				else
+					[configuration setValue:array forKey:@"_Array"];
 				[sections addObject:configuration];
 			} else 			
 				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
@@ -131,6 +136,7 @@
 		[settings setValuesForKeysWithDictionary:changedsettings];
 		if (delegate && [delegate respondsToSelector:@selector(didSaveSettings:)])
 			[delegate didSaveSettings:changedsettings];
+		[changedsettings removeAllObjects];
 	}
 }
 

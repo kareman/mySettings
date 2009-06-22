@@ -1,15 +1,46 @@
-//
-//  MutableMetadataSource.m
-//  mySettings
-//
-//  Created by Kåre Morstøl on 19.06.09.
-//  Copyright 2009 NotTooBad Software. All rights reserved.
-//
+/*******************************************************************************
+ * Copyright (c) 2009 Kåre Morstøl (NotTooBad Software).
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Kåre Morstøl (NotTooBad Software) - initial API and implementation
+ *******************************************************************************/ 
 
 #import "MutableMetadataSource.h"
-
+#import "SettingsDelegate.h"
 
 @implementation MutableMetadataSource
+
+- (id) initWithConfigFile:(NSString *)configfile andSettings:(NSObject *)newsettings {
+	if (self = [super initWithConfigFile:configfile andSettings:newsettings]) {
+		changedarrays = [[NSMutableDictionary alloc] initWithCapacity:1];
+	}
+	return self;	
+}
+
+- (void) dealloc {
+	[changedarrays release];
+	[super dealloc];
+}
+
+- (void) save {
+	
+	if ([changedsettings count] || [changedarrays count]) {
+		[settings setValuesForKeysWithDictionary:changedsettings];
+		if ([settings isKindOfClass:[NSUserDefaults class]]) {
+			[settings setValuesForKeysWithDictionary:changedarrays];
+		}
+		if (delegate && [delegate respondsToSelector:@selector(didSaveSettings:)]) {
+			[changedsettings addEntriesFromDictionary:changedarrays];
+			[delegate didSaveSettings:changedsettings];
+		}
+		[changedarrays removeAllObjects];
+		[changedsettings removeAllObjects];
+	}
+}
 
 - (NSMutableArray *) dataArrayForSection:(NSUInteger)section {
 	
@@ -20,7 +51,13 @@
 		return nil;
 }
 
+- (void) markDataArrayAsChangedForSection:(NSUInteger)section {
+	NSDictionary *configuration = [self configurationAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+	[changedarrays setObject:[configuration valueForKey:@"_Array"] forKey:[configuration valueForKey:@"_ArrayKeyPath"]];
+}
+
 - (void) tableView:(UITableView *)tableView setEditing:(BOOL)editing {
+	
 	NSArray *array;
 	for (int i = 0; i<[tableView numberOfSections]; i++)
 		if (array = [self dataArrayForSection:i]) {
@@ -55,7 +92,8 @@
 	NSObject *item = [[array objectAtIndex:fromIndexPath.row] retain];
 	[array removeObjectAtIndex:fromIndexPath.row];
 	[array insertObject:item atIndex:toIndexPath.row];
-	[item release];	
+	[item release];
+	[self markDataArrayAsChangedForSection:fromIndexPath.section];
 }
 
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -66,14 +104,14 @@
 - (UITableViewCellEditingStyle) tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	if (!tableView.editing)
-		// turn of swipe-to-delete, which doesn't work
+		// turn off swipe-to-delete, which doesn't work
 		return UITableViewCellEditingStyleNone;
 	else
 		return (indexPath.row == [[self dataArrayForSection:indexPath.section] count]) ? UITableViewCellEditingStyleInsert : UITableViewCellEditingStyleDelete;
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	
+
 	NSMutableArray *array = [self dataArrayForSection:section];
 	if (array) {
 		return [array count] + ((tableView.editing) ? 1 : 0);
@@ -107,11 +145,13 @@
 		// remove item
 		[[self dataArrayForSection:indexPath.section] removeObjectAtIndex:indexPath.row];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation: UITableViewRowAnimationFade];
-		
+		[self markDataArrayAsChangedForSection:indexPath.section];
+
 	} else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		// create new item
 		NSAssert(FALSE, @"not implemented"); 
 		[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation: UITableViewRowAnimationFade];
+		[self markDataArrayAsChangedForSection:indexPath.section];
 		
 		// select it
 		[tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
