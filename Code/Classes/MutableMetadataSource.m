@@ -42,20 +42,45 @@
 	}
 }
 
-- (NSMutableArray *) dataArrayForSection:(NSUInteger)section {
+- (NSArray *) dataArrayForSection:(NSUInteger)section {
 	
 	NSObject *configuration = [sections objectAtIndex:section];
+	
 	if ([configuration isKindOfClass:[NSDictionary class]]) {
-		return (NSMutableArray *)[configuration valueForKey:@"_Array"];
+		NSString *key = [configuration valueForKey:@"_ArrayKeyPath"];
+		/*
+		 if ([changedarrays objectForKey:key])
+		 return [changedarrays objectForKey:key];
+		 else*/
+		return (NSArray *)[settings valueForKeyPath:key];
 	} else
 		return nil;
 }
 
+- (NSMutableArray *) mutableDataArrayForSection:(NSUInteger)section {
+	
+	NSObject *configuration = [sections objectAtIndex:section];
+	
+	if ([configuration isKindOfClass:[NSDictionary class]]) {
+		NSString *key = [configuration valueForKey:@"_ArrayKeyPath"];
+		NSMutableArray *array;
+		if ([settings isKindOfClass:[NSUserDefaults class]])
+			array = [[settings valueForKeyPath:key] mutableCopy];
+		else
+			array = [settings valueForKeyPath:key];
+		[changedarrays setObject:array forKey:key];
+		return (NSMutableArray *)array;
+	} else
+		return nil;
+}
+
+/*
 - (void) markDataArrayAsChangedForSection:(NSUInteger)section {
 	NSDictionary *configuration = [self configurationAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
 	[changedarrays setObject:[configuration valueForKey:@"_Array"] forKey:[configuration valueForKey:@"_ArrayKeyPath"]];
 }
-
+*/
+ 
 - (void) tableView:(UITableView *)tableView setEditing:(BOOL)editing {
 	
 	NSArray *array;
@@ -72,7 +97,7 @@
 
 - (BOOL) tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	NSMutableArray *array = [self dataArrayForSection:indexPath.section];
+	NSArray *array = [self dataArrayForSection:indexPath.section];
 	return (array && indexPath.row < [array count]);
 }
 
@@ -88,12 +113,11 @@
 
 - (void) tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
 	
-	NSMutableArray *array = [self dataArrayForSection:fromIndexPath.section];
+	NSMutableArray *array = [self mutableDataArrayForSection:fromIndexPath.section];
 	NSObject *item = [[array objectAtIndex:fromIndexPath.row] retain];
 	[array removeObjectAtIndex:fromIndexPath.row];
 	[array insertObject:item atIndex:toIndexPath.row];
 	[item release];
-	[self markDataArrayAsChangedForSection:fromIndexPath.section];
 }
 
 - (BOOL) tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,8 +135,8 @@
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-	NSMutableArray *array = [self dataArrayForSection:section];
+	
+	NSArray *array = [self dataArrayForSection:section];
 	if (array) {
 		return [array count] + ((tableView.editing) ? 1 : 0);
 	} else
@@ -122,7 +146,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	
 	if (tableView.editing) {
-		NSMutableArray *array = [self dataArrayForSection:indexPath.section];
+		NSArray *array = [self dataArrayForSection:indexPath.section];
 		if (array && indexPath.row == [array count]) {
 			static NSString *identifier = @"ADDNEWITEMCELL";
 			UITableViewCell *addnewcell = [tableView dequeueReusableCellWithIdentifier:identifier];
@@ -143,15 +167,13 @@
 	
 	if (editingStyle == UITableViewCellEditingStyleDelete) {
 		// remove item
-		[[self dataArrayForSection:indexPath.section] removeObjectAtIndex:indexPath.row];
+		[[self mutableDataArrayForSection:indexPath.section] removeObjectAtIndex:indexPath.row];
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation: UITableViewRowAnimationFade];
-		[self markDataArrayAsChangedForSection:indexPath.section];
-
+		
 	} else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		// create new item
 		NSAssert(FALSE, @"not implemented"); 
 		[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation: UITableViewRowAnimationFade];
-		[self markDataArrayAsChangedForSection:indexPath.section];
 		
 		// select it
 		[tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionNone];
