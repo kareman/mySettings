@@ -53,9 +53,6 @@
 				NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithDictionary:[item valueForKey:@"PreferenceSpecifiers"]];
 				NSString *arrayKeyPath = [item valueForKey:@"Key"];
 				[configuration setValue:arrayKeyPath forKey:@"_ArrayKeyPath"];
-				
-				NSMutableArray *array = (NSMutableArray *)[settings valueForKeyPath:arrayKeyPath];
-//				[configuration setValue:array forKey:@"_Array"];
 				[sections addObject:configuration];
 			} else 			
 				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
