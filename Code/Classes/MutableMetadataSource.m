@@ -47,12 +47,12 @@
 	NSObject *configuration = [sections objectAtIndex:section];
 	
 	if ([configuration isKindOfClass:[NSDictionary class]]) {
-		NSString *key = [configuration valueForKey:@"_ArrayKeyPath"];
-		/*
-		 if ([changedarrays objectForKey:key])
-		 return [changedarrays objectForKey:key];
-		 else*/
-		return (NSArray *)[settings valueForKeyPath:key];
+		NSString *key = [configuration valueForKeyPath:@"_ArrayKeyPath"];
+		
+		if ([changedarrays objectForKey:key])
+			return [changedarrays objectForKey:key];
+		else
+			return (NSArray *)[settings valueForKeyPath:key];
 	} else
 		return nil;
 }
@@ -62,25 +62,22 @@
 	NSObject *configuration = [sections objectAtIndex:section];
 	
 	if ([configuration isKindOfClass:[NSDictionary class]]) {
-		NSString *key = [configuration valueForKey:@"_ArrayKeyPath"];
-		NSMutableArray *array;
-		if ([settings isKindOfClass:[NSUserDefaults class]])
-			array = [[settings valueForKeyPath:key] mutableCopy];
-		else
-			array = [settings valueForKeyPath:key];
-		[changedarrays setObject:array forKey:key];
-		return (NSMutableArray *)array;
+		NSString *key = [configuration valueForKeyPath:@"_ArrayKeyPath"];
+		if ([changedarrays objectForKey:key])
+			return [changedarrays objectForKey:key];
+		else {
+			NSMutableArray *array;
+			if ([settings isKindOfClass:[NSUserDefaults class]])
+				array = [[settings valueForKeyPath:key] mutableCopy];
+			else
+				array = [settings valueForKeyPath:key];
+			[changedarrays setObject:array forKey:key];
+			return (NSMutableArray *)array;
+		}
 	} else
 		return nil;
 }
 
-/*
-- (void) markDataArrayAsChangedForSection:(NSUInteger)section {
-	NSDictionary *configuration = [self configurationAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
-	[changedarrays setObject:[configuration valueForKey:@"_Array"] forKey:[configuration valueForKey:@"_ArrayKeyPath"]];
-}
-*/
- 
 - (void) tableView:(UITableView *)tableView setEditing:(BOOL)editing {
 	
 	NSArray *array;

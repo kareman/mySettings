@@ -17,7 +17,6 @@
 	NSMutableDictionary *changedarrays;
 }
 
-//- (NSMutableArray *) dataArrayForSection:(NSUInteger)section;
 - (void) tableView:(UITableView *)tableView setEditing:(BOOL)editing;
 
 @end

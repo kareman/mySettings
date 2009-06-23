@@ -55,10 +55,7 @@
 				[configuration setValue:arrayKeyPath forKey:@"_ArrayKeyPath"];
 				
 				NSMutableArray *array = (NSMutableArray *)[settings valueForKeyPath:arrayKeyPath];
-				if ([settings isKindOfClass:[NSUserDefaults class]])
-					[configuration setValue:[NSMutableArray arrayWithArray:array] forKey:@"_Array"];
-				else
-					[configuration setValue:array forKey:@"_Array"];
+//				[configuration setValue:array forKey:@"_Array"];
 				[sections addObject:configuration];
 			} else 			
 				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
@@ -169,7 +166,7 @@
 		 NSString *key = (NSString *)[(NSDictionary *)configuration valueForKey:@"_ArrayKeyPath"]; 
 		 NSArray *array = (NSArray *)[settings valueForKeyPath:key];
 		 */
-		NSArray *array = (NSArray *)[configuration valueForKey:@"_Array"];
+		NSArray *array = (NSArray *)[configuration valueForKeyPath:@"_Array"];
 		return [array count];
 	} else {
 		return [(NSArray *)configuration count];
@@ -204,8 +201,8 @@
 	// Set up the cell...
 	cell.configuration = configuration;
 	
-	if ([configuration valueForKey:@"_Array"]) {
-		NSString *key = [configuration valueForKey:@"_ArrayKeyPath"];
+	NSString *key;
+	if (key = [configuration valueForKey:@"_ArrayKeyPath"]) {
 		NSArray *array = [settings valueForKeyPath:key];
 //		NSArray *array = (NSArray *)[configuration valueForKey:@"_Array"];
 		cell.value = [array objectAtIndex:indexPath.row];
