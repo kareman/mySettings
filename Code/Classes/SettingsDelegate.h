@@ -38,5 +38,7 @@
  */
 - (void) cellWillAppear:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexpath;
 
+- (id) objectForNewRow;
+
 @end
 

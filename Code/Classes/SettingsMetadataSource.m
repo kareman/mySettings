@@ -53,6 +53,7 @@
 				NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithDictionary:[item valueForKey:@"PreferenceSpecifiers"]];
 				NSString *arrayKeyPath = [item valueForKey:@"Key"];
 				[configuration setValue:arrayKeyPath forKey:@"_ArrayKeyPath"];
+				[configuration setValue:[settings valueForKey:arrayKeyPath] forKey:@"_Array"];
 				[sections addObject:configuration];
 			} else 			
 				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
@@ -198,12 +199,10 @@
 	// Set up the cell...
 	cell.configuration = configuration;
 	
-	NSString *key;
-	if (key = [configuration valueForKey:@"_ArrayKeyPath"]) {
-		NSArray *array = [settings valueForKeyPath:key];
-//		NSArray *array = (NSArray *)[configuration valueForKey:@"_Array"];
+	NSArray *array;
+	if (array = [configuration valueForKey:@"_Array"])
 		cell.value = [array objectAtIndex:indexPath.row];
-	} else
+	else
 		cell.value = [settings valueForKey:[configuration valueForKey:@"Key"]];
 	
 	if ([configuration valueForKey:@"IndentLevel"])

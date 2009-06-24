@@ -44,6 +44,9 @@
 
 - (NSArray *) dataArrayForSection:(NSUInteger)section {
 	
+	NSDictionary *configuration = [self configurationAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
+	return [configuration valueForKey:@"_Array"];
+	/*
 	NSObject *configuration = [sections objectAtIndex:section];
 	
 	if ([configuration isKindOfClass:[NSDictionary class]]) {
@@ -55,6 +58,7 @@
 			return (NSArray *)[settings valueForKeyPath:key];
 	} else
 		return nil;
+	 */
 }
 
 - (NSMutableArray *) mutableDataArrayForSection:(NSUInteger)section {
@@ -67,10 +71,12 @@
 			return [changedarrays objectForKey:key];
 		else {
 			NSMutableArray *array;
-			if ([settings isKindOfClass:[NSUserDefaults class]])
+			if ([settings isKindOfClass:[NSUserDefaults class]]) {
 				array = [[settings valueForKeyPath:key] mutableCopy];
-			else
+				[configuration setValue:array forKey:@"_Array"];
+			} else
 				array = [settings valueForKeyPath:key];
+			
 			[changedarrays setObject:array forKey:key];
 			return (NSMutableArray *)array;
 		}
@@ -169,7 +175,10 @@
 		
 	} else if (editingStyle == UITableViewCellEditingStyleInsert) {
 		// create new item
-		NSAssert(FALSE, @"not implemented"); 
+		//NSAssert(FALSE, @"not implemented");
+		id newobject = [delegate objectForNewRow];
+		[[self mutableDataArrayForSection:indexPath.section] addObject:newobject];
+		
 		[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation: UITableViewRowAnimationFade];
 		
 		// select it
