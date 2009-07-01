@@ -46,19 +46,6 @@
 	
 	NSDictionary *configuration = [self configurationAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:section]];
 	return [configuration valueForKey:@"_Array"];
-	/*
-	NSObject *configuration = [sections objectAtIndex:section];
-	
-	if ([configuration isKindOfClass:[NSDictionary class]]) {
-		NSString *key = [configuration valueForKeyPath:@"_ArrayKeyPath"];
-		
-		if ([changedarrays objectForKey:key])
-			return [changedarrays objectForKey:key];
-		else
-			return (NSArray *)[settings valueForKeyPath:key];
-	} else
-		return nil;
-	 */
 }
 
 - (NSMutableArray *) mutableDataArrayForSection:(NSUInteger)section {
@@ -74,6 +61,7 @@
 			if ([settings isKindOfClass:[NSUserDefaults class]]) {
 				array = [[settings valueForKeyPath:key] mutableCopy];
 				[configuration setValue:array forKey:@"_Array"];
+				[array release];
 			} else
 				array = [settings valueForKeyPath:key];
 			
@@ -158,6 +146,7 @@
 				addnewcell.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
 				addnewcell.backgroundView.backgroundColor = [UIColor clearColor];
 				[addnewcell.backgroundView release];
+				[addnewcell autorelease];
 			}
 			return addnewcell;
 		}
@@ -174,8 +163,9 @@
 		[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation: UITableViewRowAnimationFade];
 		
 	} else if (editingStyle == UITableViewCellEditingStyleInsert) {
+		
+		
 		// create new item
-		//NSAssert(FALSE, @"not implemented");
 		id newobject = [delegate objectForNewRow];
 		[[self mutableDataArrayForSection:indexPath.section] addObject:newobject];
 		
