@@ -72,11 +72,19 @@
 		return nil;
 }
 
+- (NSDictionary *) configurationForSection:(NSInteger)section {
+	NSObject *sectionconfiguration = [sections objectAtIndex:section];
+	if ([sectionconfiguration isKindOfClass:[NSDictionary class]]) {
+		return (NSDictionary *)sectionconfiguration; 
+	} else
+		return nil;
+}
+
 - (void) tableView:(UITableView *)tableView setEditing:(BOOL)editing {
 	
-	NSArray *array;
 	for (int i = 0; i<[tableView numberOfSections]; i++)
-		if (array = [self dataArrayForSection:i]) {
+		if ([[[self configurationForSection:i] objectForKey:@"DisplayAddRowButton"] boolValue]) {
+			NSArray *array = [self dataArrayForSection:i];
 			if (editing)
 				[tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:[array count] inSection:i]] withRowAnimation:UITableViewRowAnimationFade];
 			else
@@ -127,8 +135,8 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	
-	NSArray *array = [self dataArrayForSection:section];
-	if (array) {
+	if ([[[self configurationForSection:section] objectForKey:@"DisplayAddRowButton"] boolValue]) {
+		NSArray *array = [self dataArrayForSection:section];
 		return [array count] + ((tableView.editing) ? 1 : 0);
 	} else
 		return [super tableView:tableView numberOfRowsInSection:section];
