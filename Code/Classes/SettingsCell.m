@@ -187,6 +187,7 @@
 	
 	/* If value is nil then this value is being set by the SettingsMetadataSource before the setting is shown for the first time. If it's not nil, then the setting has been changed and we need to store it in changedsettings */
 	if (value) {
+		[value release];
 		NSString *key = [configuration valueForKey:@"Key"];
 		[changedsettings setValue:newvalue forKey:key];
 	}

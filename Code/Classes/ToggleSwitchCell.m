@@ -18,9 +18,10 @@
 	if (self = [super initWithTitlelabel:YES reuseIdentifier:reuseIdentifier]) {
 		
 		UISwitch *switchview = [[UISwitch alloc] initWithFrame:CGRectZero];
-		valueview = switchview;
 		[switchview addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
-		[self.contentView addSubview:valueview];
+		[self.contentView addSubview:switchview];
+		[switchview release];
+		valueview = switchview;
 	}
 	return self;
 }

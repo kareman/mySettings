@@ -35,7 +35,7 @@
 	NSObject *settings;
 	
 	UIViewController *viewcontroller;
-	NSMutableArray *configurationsForDynamicSections;
+
 	NSObject<SettingsDelegate> *delegate;
 }
 
@@ -49,7 +49,7 @@
  
  @todo this should probably not be a property. Should rather be set during init. The value is needed to reach the navigation controller.
  */
-@property (nonatomic, retain) UIViewController *viewcontroller;
+@property (nonatomic, assign) UIViewController *viewcontroller;
 
 /** 
  Loads the configuration from the plist file, and uses a custom object for the settings values.

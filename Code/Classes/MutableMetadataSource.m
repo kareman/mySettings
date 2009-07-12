@@ -151,10 +151,10 @@
 			UITableViewCell *addnewcell = [tableView dequeueReusableCellWithIdentifier:identifier];
 			if (!addnewcell) {
 				addnewcell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:identifier];
+				[addnewcell autorelease];
 				addnewcell.backgroundView = [[UIView alloc] initWithFrame:CGRectZero];
 				addnewcell.backgroundView.backgroundColor = [UIColor clearColor];
 				[addnewcell.backgroundView release];
-				[addnewcell autorelease];
 			}
 			return addnewcell;
 		}
