@@ -15,14 +15,14 @@
 
 @implementation NumberCell
 
-- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier {
+- (id) initWithReuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
 		self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	return self;
 }
 
-- (void)dealloc {
+- (void) dealloc {
 	[super dealloc];
 }
 
