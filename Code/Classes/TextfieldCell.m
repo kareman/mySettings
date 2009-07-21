@@ -37,7 +37,7 @@
 	return self;
 }
 
-- (void)dealloc {
+- (void) dealloc {
 	[super dealloc];
 	[valuetextfield release];
 }
@@ -54,7 +54,17 @@
 
 #pragma mark Text Field Delegate Methods
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+- (void) textFieldDidBeginEditing:(UITextField *)textField {
+	UITableView *tableview = (UITableView *) self.superview;
+	tableview.scrollEnabled = FALSE;
+}
+
+- (void) textFieldDidEndEditing:(UITextField *)textField {
+	UITableView *tableview = (UITableView *) self.superview;
+	tableview.scrollEnabled = TRUE;
+}
+
+- (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 
 	if ([(NSNumber *)[configuration objectForKey:@"AllowLeadingSpaces"] boolValue])
 		return YES;
@@ -66,7 +76,7 @@
 		return YES;
 }
 
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+- (BOOL) textFieldShouldEndEditing:(UITextField *)textField {
 	
 	NSString *trimmedtext = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	if ([trimmedtext length] > 0) {
@@ -76,7 +86,7 @@
 		return NO;
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+- (BOOL) textFieldShouldReturn:(UITextField *)theTextField {
 	[theTextField resignFirstResponder]; //This closes the keyboard when you click done in the field.
 	return YES;
 }
