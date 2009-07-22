@@ -27,12 +27,12 @@
 		valuetextfield.clearsOnBeginEditing = NO;
 		valuetextfield.clearButtonMode = UITextFieldViewModeWhileEditing;
 		valuetextfield.returnKeyType = UIReturnKeyDone;
-		valuetextfield.enablesReturnKeyAutomatically = YES;
 		[valuetextfield setDelegate:self];
 		
 		[valuelabel removeFromSuperview];
 		[self.contentView addSubview:valuetextfield];
 		valueview = valuetextfield;
+		
 	}
 	return self;
 }
@@ -45,6 +45,9 @@
 // Without this, the title label disappears. I have no idea why.
 - (void) setConfiguration:(NSDictionary *)config {
 	[super setConfiguration:config];
+	
+	valuetextfield.placeholder = [configuration objectForKey:@"PlaceHolder"];
+	valuetextfield.enablesReturnKeyAutomatically = [[configuration objectForKey:@"DontAllowEmptyText"] boolValue];
 }
 
 - (void) setValue:(NSObject *)newvalue {
@@ -62,28 +65,17 @@
 - (void) textFieldDidEndEditing:(UITextField *)textField {
 	UITableView *tableview = (UITableView *) self.superview;
 	tableview.scrollEnabled = TRUE;
+	
+	super.value = textField.text = ([(NSNumber *)[configuration objectForKey:@"DontTrimText"] boolValue]) ? textField.text : [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 - (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-
-	if ([(NSNumber *)[configuration objectForKey:@"AllowLeadingSpaces"] boolValue])
-		return YES;
 	
-	// Avoid starting text with space
-	if (range.location == 0 && [string isEqualToString:@" "] )
+	if (range.location == 0 && [string isEqualToString:@" "] && ![(NSNumber *)[configuration objectForKey:@"AllowLeadingSpaces"] boolValue])
+		// Avoid starting text with space
 		return NO;
 	else
 		return YES;
-}
-
-- (BOOL) textFieldShouldEndEditing:(UITextField *)textField {
-	
-	NSString *trimmedtext = [textField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	if ([trimmedtext length] > 0) {
-		super.value = trimmedtext;
-		return YES;
-	} else
-		return NO;
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)theTextField {
