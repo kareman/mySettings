@@ -104,9 +104,10 @@
 	
 	if (proposedDestinationIndexPath.section < sourceIndexPath.section)
 		return [NSIndexPath indexPathForRow:0 inSection:sourceIndexPath.section];
-	else if (proposedDestinationIndexPath.row == [tableView numberOfRowsInSection:proposedDestinationIndexPath.section]-1)
-		return [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row-1 inSection:sourceIndexPath.section];
-	else
+	else if (proposedDestinationIndexPath.row == [tableView numberOfRowsInSection:proposedDestinationIndexPath.section]-1) {
+		bool hasaddrowbutton = [[[self configurationForSection:proposedDestinationIndexPath.section] objectForKey:@"DisplayAddRowButton"] boolValue];
+		return [NSIndexPath indexPathForRow:proposedDestinationIndexPath.row-(hasaddrowbutton ? 1 : 0) inSection:sourceIndexPath.section];
+	} else
 		return proposedDestinationIndexPath;
 }
 
