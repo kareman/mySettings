@@ -164,7 +164,9 @@
 					[self addSubview:label];
 				
 			}
-			[self.delegate pickerView:self didSelectRow:[self selectedRowInComponent:component] inComponent:component];
+			
+			if ([self.delegate respondsToSelector:@selector(pickerView:didSelectRow:inComponent:)])
+				[self.delegate pickerView:self didSelectRow:[self selectedRowInComponent:component] inComponent:component];
 		}
 		
 	}
