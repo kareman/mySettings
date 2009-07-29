@@ -119,11 +119,11 @@
 }
 
 - (void) dealloc {
-	[super dealloc];
 	[sections release];
 	[sectiontitles release];
 	[changedsettings release];
 	[settings release];
+	[super dealloc];
 }
 
 - (void) save {
