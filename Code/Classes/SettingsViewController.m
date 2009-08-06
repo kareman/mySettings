@@ -26,7 +26,7 @@
 	 */
 }
 
-- (id)initWithConfigFile:(NSString *)configfile {
+- (id) initWithConfigFile:(NSString *)configfile {
 	if (self = [super initWithStyle:UITableViewStyleGrouped]) {
 		settingsdatasource = [[SettingsMetadataSource alloc] initWithConfigFile:configfile];
 		[self setup];
@@ -42,7 +42,7 @@
 	return self;	
 }
 
-- (void)dealloc {
+- (void) dealloc {
 	[super dealloc];
 	[settingsdatasource release];
 }
@@ -53,7 +53,7 @@
 
 #pragma mark View
 
-- (void)viewDidLoad {
+- (void) viewDidLoad {
    [super viewDidLoad];
 	self.tableView.delegate = settingsdatasource;
 	self.tableView.dataSource = settingsdatasource;
@@ -79,19 +79,10 @@
  }
  */
 
-- (void)viewDidDisappear:(BOOL)animated {
+- (void) viewDidDisappear:(BOOL)animated {
 	[super viewDidDisappear:animated];
 	[settingsdatasource save];
 }
-
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
 
 /*
  - (void)didReceiveMemoryWarning {
