@@ -155,6 +155,20 @@
 				<string>10</string>
 			</array>
 		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Below is a child pane</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>ChildPane1</string>
+			<key>Title</key>
+			<string>Tap for child pane</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
 	</array>
 </dict>
 </plist>

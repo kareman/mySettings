@@ -15,6 +15,7 @@
 #import "MultiValueEditorViewController.h"
 //#import "SettingsCellProtocol.h"
 #import "SettingsDelegate.h"
+#import "SettingsViewController.h"
 
 @implementation SettingsMetadataSource
 
@@ -84,7 +85,6 @@
 	// @todo add observer to update title when settings.[rootofplist valueForKey:@"Titlekey"] changes.
 	else
 		title = [rootofplist valueForKey:@"Title"];	
-	
 }
 
 - (NSDictionary *) configurationAtIndexPath:(NSIndexPath *)indexpath {
@@ -143,9 +143,17 @@
 	if ([[cell.configuration objectForKey:@"Type"] isEqualToString:@"PSMultiValueSpecifier"]) {
 		vc = [[MultiValueEditorViewController alloc] initWithCell:cell andDelegate:delegate];
 	}
+	else if ([[cell.configuration objectForKey:@"Type"] isEqualToString:@"PSChildPaneSpecifier"]) {
+		
+		NSString *file = [cell.configuration objectForKey:@"File"];
+		NSString *plist = [[NSBundle mainBundle] pathForResource:file ofType:@"plist"];
+		
+		vc = [[SettingsViewController alloc] initWithConfigFile:plist andSettings:settings];
+	}
 	else {
 		vc = [[SettingsEditorViewController alloc] initWithCell:cell andDelegate:delegate];
 	}
+	
 	[viewcontroller.navigationController pushViewController:vc animated:YES];
 	vc.view.backgroundColor = viewcontroller.view.backgroundColor;
 	[vc release];
@@ -200,9 +208,10 @@
 	cell.configuration = configuration;
 	
 	NSArray *array;
+	
 	if (array = [configuration valueForKey:@"_Array"])
 		cell.value = [array objectAtIndex:indexPath.row];
-	else
+	else if ([configuration valueForKey:@"Key"])
 		cell.value = [settings valueForKey:[configuration valueForKey:@"Key"]];
 	
 	if ([configuration valueForKey:@"IndentLevel"])

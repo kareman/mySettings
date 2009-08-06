@@ -15,6 +15,7 @@
 #import "TimeIntervalCell.h"
 #import "ToggleSwitchCell.h"
 #import "MultiValueCell.h"
+#import "ChildPaneCell.h"
 
 @implementation SettingsCell
 
@@ -43,6 +44,9 @@
 	
    if ([settingstype isEqualToString:@"PSMultiValueSpecifier"])
 		return [[[MultiValueCell alloc] initWithReuseIdentifier:settingstype] autorelease];
+	
+	if ([settingstype isEqualToString:@"PSChildPaneSpecifier"])
+		return [[[ChildPaneCell alloc] initWithReuseIdentifier:settingstype] autorelease];
 	
 	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;
