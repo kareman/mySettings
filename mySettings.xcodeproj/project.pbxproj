@@ -12,6 +12,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
+		3EE31F35102B4C92008C8C4D /* ChildPaneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */; };
+		3EE31FA5102B4EA4008C8C4D /* ChildPane1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EE31FA3102B4EA4008C8C4D /* ChildPane1.plist */; };
 		BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */; };
 		BA15E9E00F65825900EFE7A1 /* LabeledPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E9DF0F65825900EFE7A1 /* LabeledPickerView.m */; };
 		BA2BD6CD0F6EB23800B152D1 /* SettingsCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC97FC80F6165D500CD3E94 /* SettingsCell.h */; };
@@ -35,6 +37,7 @@
 		BAB41FD00F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */; };
 		BAB41FD10F800E3D00ED3822 /* MultiValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */; };
 		BAB41FD20F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */; };
+		BAB592B2102B7C3000D8F003 /* ChildPaneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */; };
 		BABC18FE0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BABC18FF0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BAC97FCA0F6165D500CD3E94 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC97FC90F6165D500CD3E94 /* SettingsCell.m */; };
@@ -60,6 +63,9 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3EE31F33102B4C92008C8C4D /* ChildPaneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildPaneCell.h; sourceTree = "<group>"; };
+		3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildPaneCell.m; sourceTree = "<group>"; };
+		3EE31FA3102B4EA4008C8C4D /* ChildPane1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChildPane1.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCellProtocol.h; sourceTree = "<group>"; };
 		BA15E9DE0F65825900EFE7A1 /* LabeledPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabeledPickerView.h; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3EE31FA3102B4EA4008C8C4D /* ChildPane1.plist */,
 				BAEB549A0F5DF0940093BF1B /* Root.plist */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
@@ -183,6 +190,8 @@
 		BAC97FC60F6165AE00CD3E94 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				3EE31F33102B4C92008C8C4D /* ChildPaneCell.h */,
+				3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */,
 				BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */,
 				BAC97FC80F6165D500CD3E94 /* SettingsCell.h */,
 				BAC97FC90F6165D500CD3E94 /* SettingsCell.m */,
@@ -320,6 +329,7 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				BA7A4E760F5C7794009B40A5 /* Settings.bundle in Resources */,
 				BAEB549B0F5DF0940093BF1B /* Root.plist in Resources */,
+				3EE31FA5102B4EA4008C8C4D /* ChildPane1.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +357,7 @@
 				BAB41FCF0F800E3D00ED3822 /* MultiValueCell.m in Sources */,
 				BAB41FD00F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */,
 				BAFCDC900FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */,
+				3EE31F35102B4C92008C8C4D /* ChildPaneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +379,7 @@
 				BAB41FD10F800E3D00ED3822 /* MultiValueCell.m in Sources */,
 				BAB41FD20F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */,
 				BAFCDC920FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */,
+				BAB592B2102B7C3000D8F003 /* ChildPaneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
