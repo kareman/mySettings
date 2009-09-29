@@ -15,6 +15,7 @@
 #import "TimeIntervalCell.h"
 #import "ToggleSwitchCell.h"
 #import "MultiValueCell.h"
+#import "SliderCell.h"
 #import "ChildPaneCell.h"
 
 @implementation SettingsCell
@@ -35,6 +36,9 @@
 	
 	if ([settingstype isEqualToString:@"Integer"])
 		return [[[NumberCell alloc] initWithReuseIdentifier:settingstype] autorelease];
+	
+	if ([settingstype isEqualToString:@"Slider"])
+		return [[[SliderCell alloc] initWithReuseIdentifier:settingstype] autorelease];
 	
 	if ([settingstype isEqualToString:@"TimeInterval"])
 		return [[[TimeIntervalCell alloc] initWithReuseIdentifier:settingstype] autorelease];

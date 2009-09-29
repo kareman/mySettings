@@ -12,13 +12,15 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
-		3EE31F35102B4C92008C8C4D /* ChildPaneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */; };
 		3EE31FA5102B4EA4008C8C4D /* ChildPane1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EE31FA3102B4EA4008C8C4D /* ChildPane1.plist */; };
 		BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */; };
 		BA15E9E00F65825900EFE7A1 /* LabeledPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA15E9DF0F65825900EFE7A1 /* LabeledPickerView.m */; };
 		BA2BD6CD0F6EB23800B152D1 /* SettingsCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC97FC80F6165D500CD3E94 /* SettingsCell.h */; };
 		BA2F3B6C0F6B4270003E266B /* mySettingsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F3B6B0F6B4270003E266B /* mySettingsAppDelegate.m */; };
 		BA319EB50F79801800121BB9 /* TestCustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA319EB40F79801800121BB9 /* TestCustomCell.m */; };
+		BA4A6504103350E700C18442 /* SliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A6502103350E700C18442 /* SliderCell.m */; };
+		BA4A6505103350E700C18442 /* SliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4A6502103350E700C18442 /* SliderCell.m */; };
+		BA4A6506103350E700C18442 /* SliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4A6503103350E700C18442 /* SliderCell.h */; };
 		BA4B7E2D0F69B87000BC932F /* TextfieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE687E20F603B98002E9B47 /* TextfieldCell.m */; };
 		BA4B7E2E0F69B87000BC932F /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC97FC90F6165D500CD3E94 /* SettingsCell.m */; };
 		BA4B7E2F0F69B87000BC932F /* NumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC980540F617BEE00CD3E94 /* NumberCell.m */; };
@@ -33,11 +35,13 @@
 		BA4B7E4E0F69B8BC00BC932F /* SettingsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = BAEB547F0F5DEC990093BF1B /* SettingsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA4B7E500F69B9D200BC932F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		BA7A4E760F5C7794009B40A5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BA7A4E750F5C7794009B40A5 /* Settings.bundle */; };
+		BAAD11F7107283F50045C0B8 /* ChildPaneCell.h in Headers */ = {isa = PBXBuildFile; fileRef = BAAD11F5107283F50045C0B8 /* ChildPaneCell.h */; };
+		BAAD11F8107283F50045C0B8 /* ChildPaneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAD11F6107283F50045C0B8 /* ChildPaneCell.m */; };
+		BAAD11F9107284030045C0B8 /* ChildPaneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAD11F6107283F50045C0B8 /* ChildPaneCell.m */; };
 		BAB41FCF0F800E3D00ED3822 /* MultiValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */; };
 		BAB41FD00F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */; };
 		BAB41FD10F800E3D00ED3822 /* MultiValueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */; };
 		BAB41FD20F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */; };
-		BAB592B2102B7C3000D8F003 /* ChildPaneCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */; };
 		BABC18FE0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BABC18FF0F6C081800B22382 /* IntegerPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BABC18FC0F6C081800B22382 /* IntegerPickerView.m */; };
 		BAC97FCA0F6165D500CD3E94 /* SettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAC97FC90F6165D500CD3E94 /* SettingsCell.m */; };
@@ -63,8 +67,6 @@
 		2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		28AD735F0D9D9599002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3EE31F33102B4C92008C8C4D /* ChildPaneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildPaneCell.h; sourceTree = "<group>"; };
-		3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildPaneCell.m; sourceTree = "<group>"; };
 		3EE31FA3102B4EA4008C8C4D /* ChildPane1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ChildPane1.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsCellProtocol.h; sourceTree = "<group>"; };
@@ -76,7 +78,11 @@
 		BA300E930F69C60200A2CC32 /* libmySettings.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libmySettings.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA319EB30F79801800121BB9 /* TestCustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCustomCell.h; sourceTree = "<group>"; };
 		BA319EB40F79801800121BB9 /* TestCustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCustomCell.m; sourceTree = "<group>"; };
+		BA4A6502103350E700C18442 /* SliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderCell.m; sourceTree = "<group>"; };
+		BA4A6503103350E700C18442 /* SliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderCell.h; sourceTree = "<group>"; };
 		BA7A4E750F5C7794009B40A5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		BAAD11F5107283F50045C0B8 /* ChildPaneCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildPaneCell.h; sourceTree = "<group>"; };
+		BAAD11F6107283F50045C0B8 /* ChildPaneCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildPaneCell.m; sourceTree = "<group>"; };
 		BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiValueCell.m; sourceTree = "<group>"; };
 		BAB41FCC0F800E3D00ED3822 /* MultiValueEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiValueEditorViewController.m; sourceTree = "<group>"; };
 		BAB41FCD0F800E3D00ED3822 /* MultiValueEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiValueEditorViewController.h; sourceTree = "<group>"; };
@@ -190,8 +196,10 @@
 		BAC97FC60F6165AE00CD3E94 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3EE31F33102B4C92008C8C4D /* ChildPaneCell.h */,
-				3EE31F34102B4C92008C8C4D /* ChildPaneCell.m */,
+				BAAD11F5107283F50045C0B8 /* ChildPaneCell.h */,
+				BAAD11F6107283F50045C0B8 /* ChildPaneCell.m */,
+				BA4A6503103350E700C18442 /* SliderCell.h */,
+				BA4A6502103350E700C18442 /* SliderCell.m */,
 				BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */,
 				BAC97FC80F6165D500CD3E94 /* SettingsCell.h */,
 				BAC97FC90F6165D500CD3E94 /* SettingsCell.m */,
@@ -256,6 +264,8 @@
 				BA06BDE00F799F8200A46A02 /* SettingsCellProtocol.h in Headers */,
 				BAD1D62B0FC4B50D00090104 /* SettingsDelegate.h in Headers */,
 				BAFCDC910FEBE76A00EEE2B7 /* MutableMetadataSource.h in Headers */,
+				BA4A6506103350E700C18442 /* SliderCell.h in Headers */,
+				BAAD11F7107283F50045C0B8 /* ChildPaneCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +367,8 @@
 				BAB41FCF0F800E3D00ED3822 /* MultiValueCell.m in Sources */,
 				BAB41FD00F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */,
 				BAFCDC900FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */,
-				3EE31F35102B4C92008C8C4D /* ChildPaneCell.m in Sources */,
+				BA4A6504103350E700C18442 /* SliderCell.m in Sources */,
+				BAAD11F9107284030045C0B8 /* ChildPaneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,7 +390,8 @@
 				BAB41FD10F800E3D00ED3822 /* MultiValueCell.m in Sources */,
 				BAB41FD20F800E3D00ED3822 /* MultiValueEditorViewController.m in Sources */,
 				BAFCDC920FEBE76A00EEE2B7 /* MutableMetadataSource.m in Sources */,
-				BAB592B2102B7C3000D8F003 /* ChildPaneCell.m in Sources */,
+				BA4A6505103350E700C18442 /* SliderCell.m in Sources */,
+				BAAD11F8107283F50045C0B8 /* ChildPaneCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -84,6 +84,26 @@
 		</dict>
 		<dict>
 			<key>Title</key>
+			<string>Size</string>
+			<key>Type</key>
+			<string>Slider</string>
+			<key>MinValue</key>
+			<string>0.05</string>
+			<key>MaxValue</key>
+			<string>2.2</string>
+			<key>DefaultValue</key>
+			<string>0.4</string>
+			<key>FixedSize</key>
+			<string>160</string>
+			<key>Continuous</key>
+			<false/>
+			<key>onValueChanged</key>
+			<string>sliderChanged:</string>
+			<key>Key</key>
+			<string>size</string>
+		</dict>
+		<dict>
+			<key>Title</key>
 			<string>Rows from array</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>

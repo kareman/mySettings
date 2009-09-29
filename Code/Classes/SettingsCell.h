@@ -29,7 +29,6 @@
 	NSObject *value;								/**< The value of this setting */
 	NSMutableDictionary *changedsettings;	/**< Cache for unsaved changes to settings */
 	NSDictionary *configuration;				/**< The configuration of the cell, taken from the plist */
-	
 }
 
 @property (nonatomic, readonly) UILabel *titlelabel;

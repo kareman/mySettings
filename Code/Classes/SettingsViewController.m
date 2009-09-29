@@ -18,6 +18,7 @@
 - (void) setup {
 	self.title = settingsdatasource.title;
 	settingsdatasource.viewcontroller = self;
+	settingsdatasource.delegate = self;
 	
 	/* NB: selectors are fake*/
 	/*	self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:settingsdatasource action:@selector(save:)];
@@ -49,6 +50,10 @@
 
 - (NSObject *) settings {
 	return settingsdatasource.settings;
+}
+
+-(void) sliderChanged:(id)sender {
+	NSLog(@"slider value is %f", [(UISlider *)sender value]);
 }
 
 #pragma mark View
