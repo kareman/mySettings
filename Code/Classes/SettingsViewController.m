@@ -78,24 +78,17 @@
  [super viewDidAppear:animated];
  }
  */
-/*
- - (void)viewWillDisappear:(BOOL)animated {
- [super viewWillDisappear:animated];
- }
- */
 
-- (void) viewDidDisappear:(BOOL)animated {
-	[super viewDidDisappear:animated];
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
 	[settingsdatasource save];
 }
 
 /*
- - (void)didReceiveMemoryWarning {
- [super didReceiveMemoryWarning]; // Releases the view if it doesn't have a superview
- // Release anything that's not essential, such as cached data
+ - (void) viewDidDisappear:(BOOL)animated {
+ [super viewDidDisappear:animated];
  }
  */
-
 
 @end
 
