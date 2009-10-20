@@ -14,10 +14,10 @@
 
 @implementation TextfieldCell
 
-//@synthesize configuration;
-
 - (id) initWithReuseIdentifier:(NSString *)reuseIdentifier {
 	if (self = [super initWithValuelabelAndReuseIdentifier:reuseIdentifier]) {
+		
+		self.selectionStyle = UITableViewCellSelectionStyleNone;
 		
 		valuetextfield = [[UITextField alloc] initWithFrame:CGRectMake(0, 11, 0, 25)];
 		
@@ -38,16 +38,72 @@
 }
 
 - (void) dealloc {
-	[super dealloc];
+	
 	[valuetextfield release];
+	[super dealloc];
 }
 
 // Without this, the title label disappears. I have no idea why.
 - (void) setConfiguration:(NSDictionary *)config {
 	[super setConfiguration:config];
 	
+	/* Autocapitalization */
+	
+	UITextAutocapitalizationType autocapitalizationType = UITextAutocapitalizationTypeNone;
+	
+	NSString *capitalizationValue = [configuration objectForKey:@"Autocapitalization"];
+	if ([@"UITextAutocapitalizationTypeWords" isEqualToString:capitalizationValue]) {
+		autocapitalizationType = UITextAutocapitalizationTypeWords;
+	} else if ([@"UITextAutocapitalizationTypeSentences" isEqualToString:capitalizationValue]) {
+		autocapitalizationType = UITextAutocapitalizationTypeSentences;
+	} else if ([@"UITextAutocapitalizationTypeAllCharacters" isEqualToString:capitalizationValue]) {
+		autocapitalizationType = UITextAutocapitalizationTypeAllCharacters;
+	}
+	
+	valuetextfield.autocapitalizationType = autocapitalizationType;
+	
+	/* Autocorrection */
+	
+	UITextAutocorrectionType autocorrectionType = UITextAutocorrectionTypeDefault;
+	
+	NSString *correctionValue = [configuration objectForKey:@"AutocorrectionType"];
+	if ([@"UITextAutocorrectionTypeNo" isEqualToString:correctionValue]) {
+		autocorrectionType = UITextAutocorrectionTypeNo;
+	} else if ([@"UITextAutocorrectionTypeYes" isEqualToString:correctionValue]) {
+		autocorrectionType = UITextAutocorrectionTypeYes;
+	}
+	
+	valuetextfield.autocorrectionType = autocorrectionType;
+	
+	/* Keyboard Type */
+	
+	NSString *keyboardValue = [configuration objectForKey:@"KeyboardType"];
+	if (keyboardValue) {
+		UIKeyboardType keyboardType = UIKeyboardTypeDefault;
+		if ([@"UIKeyboardTypeASCIICapable" isEqualToString:keyboardValue]) {
+			keyboardType = UIKeyboardTypeASCIICapable;
+		} else if ([@"UIKeyboardTypeNumbersAndPunctuation" isEqualToString:keyboardValue]) {
+			keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+		} else if ([@"UIKeyboardTypeURL" isEqualToString:keyboardValue]) {
+			keyboardType = UIKeyboardTypeURL;
+		} else if ([@"UIKeyboardTypeNumberPad" isEqualToString:keyboardValue]) {
+			keyboardType = UIKeyboardTypeNumberPad;
+		} else if ([@"UIKeyboardTypePhonePad" isEqualToString:keyboardValue]) {
+			keyboardType = UIKeyboardTypePhonePad;
+		} else if ([@"UIKeyboardTypeNamePhonePad" isEqualToString:keyboardValue]) {
+			keyboardType = UIKeyboardTypeNamePhonePad;
+		} else if ([@"UIKeyboardTypeEmailAddress" isEqualToString:keyboardValue]) {
+			keyboardType = UIKeyboardTypeEmailAddress;
+		}
+		
+		valuetextfield.keyboardType = keyboardType;
+	}
+	
+	/* Other */
+	
 	valuetextfield.placeholder = [configuration objectForKey:@"PlaceHolder"];
 	valuetextfield.enablesReturnKeyAutomatically = [[configuration objectForKey:@"DontAllowEmptyText"] boolValue];
+	valuetextfield.secureTextEntry = [[configuration objectForKey:@"IsSecure"] boolValue];
 }
 
 - (void) setValue:(NSObject *)newvalue {

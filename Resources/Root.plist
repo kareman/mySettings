@@ -38,6 +38,18 @@
 		</dict>
 		<dict>
 			<key>Title</key>
+			<string>Email</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Key</key>
+			<string>email</string>
+			<key>PlaceHolder</key>
+			<string>you@there.com</string>
+			<key>KeyboardType</key>
+			<string>UIKeyboardTypeEmailAddress</string>
+		</dict>
+		<dict>
+			<key>Title</key>
 			<string></string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
