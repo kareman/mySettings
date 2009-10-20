@@ -208,11 +208,14 @@
 	cell.configuration = configuration;
 	
 	NSArray *array;
+	NSString *key;
 	
 	if (array = [configuration valueForKey:@"_Array"])
 		cell.value = [array objectAtIndex:indexPath.row];
-	else if ([configuration valueForKey:@"Key"])
-		cell.value = [settings valueForKey:[configuration valueForKey:@"Key"]];
+	else if (key = [configuration valueForKey:@"Key"]) {
+		NSObject *value = [changedsettings valueForKey:key];
+		cell.value = (value) ? value : [settings valueForKey:key];
+	}
 	
 	if ([configuration valueForKey:@"IndentLevel"])
 		cell.indentationLevel = [(NSNumber *)[configuration valueForKey:@"IndentLevel"] intValue];
