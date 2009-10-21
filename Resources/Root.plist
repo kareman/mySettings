@@ -68,6 +68,12 @@
 		</dict>
 		<dict>
 			<key>Title</key>
+			<string>Just a title</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
 			<string>Time (&gt; 0)</string>
 			<key>Type</key>
 			<string>TimeInterval</string>

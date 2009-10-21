@@ -196,13 +196,13 @@
 		BAC97FC60F6165AE00CD3E94 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */,
+				BAC97FC80F6165D500CD3E94 /* SettingsCell.h */,
+				BAC97FC90F6165D500CD3E94 /* SettingsCell.m */,
 				BAAD11F5107283F50045C0B8 /* ChildPaneCell.h */,
 				BAAD11F6107283F50045C0B8 /* ChildPaneCell.m */,
 				BA4A6503103350E700C18442 /* SliderCell.h */,
 				BA4A6502103350E700C18442 /* SliderCell.m */,
-				BA06BDDD0F799F8200A46A02 /* SettingsCellProtocol.h */,
-				BAC97FC80F6165D500CD3E94 /* SettingsCell.h */,
-				BAC97FC90F6165D500CD3E94 /* SettingsCell.m */,
 				BAB41FCE0F800E3D00ED3822 /* MultiValueCell.h */,
 				BAB41FCB0F800E3D00ED3822 /* MultiValueCell.m */,
 				BAE687E10F603B98002E9B47 /* TextfieldCell.h */,

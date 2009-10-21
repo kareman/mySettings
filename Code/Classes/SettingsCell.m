@@ -52,6 +52,9 @@
 	if ([settingstype isEqualToString:@"PSChildPaneSpecifier"])
 		return [[[ChildPaneCell alloc] initWithReuseIdentifier:settingstype] autorelease];
 	
+	if ([settingstype isEqualToString:@"PSTitleValueSpecifier"]) 
+		return [[[SettingsCell alloc] initWithValuelabelAndReuseIdentifier:settingstype] autorelease];
+	
 	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;
 }
