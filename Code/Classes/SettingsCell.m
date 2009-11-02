@@ -16,7 +16,6 @@
 #import "ToggleSwitchCell.h"
 #import "MultiValueCell.h"
 #import "SliderCell.h"
-#import "ChildPaneCell.h"
 
 @implementation SettingsCell
 
@@ -49,11 +48,14 @@
    if ([settingstype isEqualToString:@"PSMultiValueSpecifier"])
 		return [[[MultiValueCell alloc] initWithReuseIdentifier:settingstype] autorelease];
 	
-	if ([settingstype isEqualToString:@"PSChildPaneSpecifier"])
-		return [[[ChildPaneCell alloc] initWithReuseIdentifier:settingstype] autorelease];
-	
 	if ([settingstype isEqualToString:@"PSTitleValueSpecifier"]) 
 		return [[[SettingsCell alloc] initWithValuelabelAndReuseIdentifier:settingstype] autorelease];
+	
+	if ([settingstype isEqualToString:@"PSChildPaneSpecifier"]) {
+		SettingsCell *cell = [[[SettingsCell alloc] initWithValuelabelAndReuseIdentifier:settingstype] autorelease];
+		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		return cell;
+	}
 	
 	NSAssert1(FALSE, @"unknown settings type: %@", settingstype);
 	return nil;

@@ -195,17 +195,25 @@
 		</dict>
 		<dict>
 			<key>Title</key>
-			<string>Below is a child pane</string>
+			<string>Subsettings</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
 		</dict>
 		<dict>
-			<key>File</key>
-			<string>ChildPane1</string>
-			<key>Title</key>
-			<string>Tap for child pane</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>More settings</string>
+			<key>File</key>
+			<string>ChildPane1</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Custom view controller</string>
+			<key>ViewControllerClass</key>
+			<string>CustomViewController</string>
 		</dict>
 	</array>
 </dict>
