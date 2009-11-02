@@ -51,7 +51,7 @@
 	if (self.navigationController)
 		visibleframe.size.height = visibleframe.size.height - self.navigationController.navigationBar.frame.size.height;
 	if (self.tabBarController)
-		visibleframe.size.height = visibleframe.size.height - self.tabBarController.view.frame.size.height;
+		visibleframe.size.height = visibleframe.size.height - self.tabBarController.tabBar.frame.size.height;
 	visibleframe.origin.y = 0;
 
 	// place editor view at the bottom
