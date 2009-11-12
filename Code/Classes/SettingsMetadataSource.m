@@ -139,6 +139,8 @@
 
 /** Shows the editor for this cell. */
 - (void) showEditorForCell:(SettingsCell *) cell {
+	NSAssert(viewcontroller.navigationController, @"No navigation controller found. Unable to go to next view.");
+	
 	SettingsEditorViewController *vc;
 	NSString *type = [cell.configuration objectForKey:@"Type"];
 	if ([type isEqualToString:@"PSMultiValueSpecifier"]) {
