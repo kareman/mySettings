@@ -10,13 +10,14 @@
  *******************************************************************************/ 
 
 #import <UIKit/UIKit.h>
+#import "SettingsDelegate.h"
 #import "SettingsMetadataSource.h"
 
 
 /**
 The standard full-screen settings view.
  */
-@interface SettingsViewController : UITableViewController {
+@interface SettingsViewController : UITableViewController <SettingsDelegate> {
 	SettingsMetadataSource *settingsdatasource;
 }
 
