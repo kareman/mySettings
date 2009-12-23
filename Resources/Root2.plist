@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Test settings</string>
+	<key>TitleKey</key>
+	<string>title</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Everything goes</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>DefaultValue</key>
+			<string>Test settings</string>
+			<key>Key</key>
+			<string>title</string>
+			<key>AllowLeadingSpaces</key>
+			<true/>
+			<key>DontTrimText</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Never empty</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Key</key>
+			<string>title3</string>
+			<key>DontAllowEmptyText</key>
+			<true/>
+			<key>PlaceHolder</key>
+			<string>Nothing</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Email</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>Key</key>
+			<string>email</string>
+			<key>PlaceHolder</key>
+			<string>you@there.com</string>
+			<key>KeyboardType</key>
+			<string>UIKeyboardTypeEmailAddress</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string></string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Cool?</string>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>DefaultValue</key>
+			<true/>
+			<key>Key</key>
+			<string>isCool</string>
+			<key>Hidden</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Just a title</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Time (&gt; 0)</string>
+			<key>Type</key>
+			<string>TimeInterval</string>
+			<key>DefaultValue</key>
+			<integer>4</integer>
+			<key>Key</key>
+			<string>timeinterval</string>
+			<key>CannotBeZero</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Integer w/ text</string>
+			<key>Type</key>
+			<string>Integer</string>
+			<key>MinValue</key>
+			<integer>1</integer>
+			<key>MaxValue</key>
+			<integer>200</integer>
+			<key>DefaultValue</key>
+			<integer>10</integer>
+			<key>FormatString</key>
+			<string>%@ Mississippi</string>
+			<key>Key</key>
+			<string>countOfMississippis</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Size</string>
+			<key>Type</key>
+			<string>Slider</string>
+			<key>MinValue</key>
+			<string>0.05</string>
+			<key>MaxValue</key>
+			<string>2.2</string>
+			<key>DefaultValue</key>
+			<string>0.4</string>
+			<key>FixedSize</key>
+			<string>160</string>
+			<key>Continuous</key>
+			<false/>
+			<key>onValueChanged</key>
+			<string>sliderChanged:</string>
+			<key>Key</key>
+			<string>size</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Rows from array</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Key</key>
+			<string>array</string>
+			<key>PreferenceSpecifiers</key>
+			<dict>
+				<key>Type</key>
+				<string>Custom</string>
+				<key>CustomCell</key>
+				<string>TestCustomCell</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>New section</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Just an integer</string>
+			<key>Type</key>
+			<string>Integer</string>
+			<key>MinValue</key>
+			<integer>10</integer>
+			<key>MaxValue</key>
+			<integer>20</integer>
+			<key>DefaultValue</key>
+			<integer>15</integer>
+			<key>Key</key>
+			<string>number</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Indented</string>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>DefaultValue</key>
+			<string>Edit this text</string>
+			<key>IndentLevel</key>
+			<integer>2</integer>
+			<key>Key</key>
+			<string>indented</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSMultiValueSpecifier</string>
+			<key>Title</key>
+			<string>Title animation</string>
+			<key>Key</key>
+			<string>DEL_ANIMATE_TITLES</string>
+			<key>DefaultValue</key>
+			<string>2</string>
+			<key>Titles</key>
+			<array>
+				<string>Never</string>
+				<string>Immediately</string>
+				<string>After 2 seconds</string>
+				<string>After 5 seconds</string>
+				<string>After 10 seconds</string>
+			</array>
+			<key>Values</key>
+			<array>
+				<string>-1</string>
+				<string>0</string>
+				<string>2</string>
+				<string>5</string>
+				<string>10</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Subsettings</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>More settings</string>
+			<key>File</key>
+			<string>ChildPane1</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Custom view controller</string>
+			<key>ViewControllerClass</key>
+			<string>CustomViewController</string>
+		</dict>
+	</array>
+</dict>
+</plist>
