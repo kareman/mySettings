@@ -50,10 +50,14 @@
 	CGRect visibleframe = self.view.frame;
 	if (self.navigationController)
 		visibleframe.size.height = visibleframe.size.height - self.navigationController.navigationBar.frame.size.height;
+	
+#ifdef __IPHONE_3_0
 	if (self.tabBarController)
 		visibleframe.size.height = visibleframe.size.height - self.tabBarController.tabBar.frame.size.height;
+#endif
+	
 	visibleframe.origin.y = 0;
-
+	
 	// place editor view at the bottom
 	UIView *editorview = cell.editorview;
 	CGRect editorframe = editorview.frame;
