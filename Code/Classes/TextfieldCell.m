@@ -80,19 +80,19 @@
 	NSString *keyboardValue = [configuration objectForKey:@"KeyboardType"];
 	if (keyboardValue) {
 		UIKeyboardType keyboardType = UIKeyboardTypeDefault;
-		if ([@"UIKeyboardTypeASCIICapable" isEqualToString:keyboardValue]) {
+		if ([@"UIKeyboardTypeASCIICapable" isEqualToString:keyboardValue] || [@"Alphabet" isEqualToString:keyboardValue]) {
 			keyboardType = UIKeyboardTypeASCIICapable;
-		} else if ([@"UIKeyboardTypeNumbersAndPunctuation" isEqualToString:keyboardValue]) {
+		} else if ([@"UIKeyboardTypeNumbersAndPunctuation" isEqualToString:keyboardValue] || [@"NumbersAndPunctuation" isEqualToString:keyboardValue]) {
 			keyboardType = UIKeyboardTypeNumbersAndPunctuation;
-		} else if ([@"UIKeyboardTypeURL" isEqualToString:keyboardValue]) {
+		} else if ([@"UIKeyboardTypeURL" isEqualToString:keyboardValue] || [@"URL" isEqualToString:keyboardValue]) {
 			keyboardType = UIKeyboardTypeURL;
-		} else if ([@"UIKeyboardTypeNumberPad" isEqualToString:keyboardValue]) {
+		} else if ([@"UIKeyboardTypeNumberPad" isEqualToString:keyboardValue] || [@"NumberPad" isEqualToString:keyboardValue]) {
 			keyboardType = UIKeyboardTypeNumberPad;
-		} else if ([@"UIKeyboardTypePhonePad" isEqualToString:keyboardValue]) {
+		} else if ([@"UIKeyboardTypePhonePad" isEqualToString:keyboardValue] || [@"PhonePad" isEqualToString:keyboardValue]) {
 			keyboardType = UIKeyboardTypePhonePad;
-		} else if ([@"UIKeyboardTypeNamePhonePad" isEqualToString:keyboardValue]) {
+		} else if ([@"UIKeyboardTypeNamePhonePad" isEqualToString:keyboardValue] || [@"NamePhonePad" isEqualToString:keyboardValue]) {
 			keyboardType = UIKeyboardTypeNamePhonePad;
-		} else if ([@"UIKeyboardTypeEmailAddress" isEqualToString:keyboardValue]) {
+		} else if ([@"UIKeyboardTypeEmailAddress" isEqualToString:keyboardValue] || [@"EmailAddress" isEqualToString:keyboardValue]) {
 			keyboardType = UIKeyboardTypeEmailAddress;
 		}
 		
