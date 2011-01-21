@@ -55,6 +55,7 @@
 				NSString *arrayKeyPath = [item valueForKey:@"Key"];
 				[configuration setValue:arrayKeyPath forKey:@"_ArrayKeyPath"];
 				[configuration setValue:[settings valueForKey:arrayKeyPath] forKey:@"_Array"];
+				[configuration setValue:[NSMutableArray arrayWithCapacity:5] forKey:@"_Extra"];
 				[sections addObject:configuration];
 			} else 			
 				[sections addObject:[NSMutableArray arrayWithCapacity:5]];
@@ -64,7 +65,11 @@
 		// if not, add the item to current section 
 		else {
 			if (![(NSNumber *)[item objectForKey:@"Hidden"] boolValue])
-				[(NSMutableArray *)[sections lastObject] addObject:item];
+				if ([(NSMutableArray *)[sections lastObject] isKindOfClass:[NSDictionary class]]) {
+					[(NSMutableArray *)[[sections lastObject] valueForKey:@"_Extra"] addObject:item];
+				} else {
+					[(NSMutableArray *)[sections lastObject] addObject:item];
+				}
 			
 			/* ... and add the item's default value to the settings object if it's not already there. 
 			 This is to ensure that the settings object has values for all the keys in the plist file, 
@@ -93,7 +98,13 @@
 		return [(NSArray *)sectionconfiguration objectAtIndex:indexpath.row];
 	}
 	else if ([sectionconfiguration isKindOfClass:[NSDictionary class]]) {
-		return (NSDictionary *)sectionconfiguration; 
+		NSArray *array = (NSArray *)[sectionconfiguration valueForKeyPath:@"_Array"];
+		NSArray *extra = (NSArray *)[sectionconfiguration valueForKeyPath:@"_Extra"];
+		if (indexpath.row < [array count]) {
+			return (NSDictionary *)sectionconfiguration;
+		} else {
+			return [extra objectAtIndex:(indexpath.row - [array count])];
+		}
 	}
 	
 	NSAssert(FALSE, @"not implemented"); 
@@ -180,7 +191,8 @@
 		 NSArray *array = (NSArray *)[settings valueForKeyPath:key];
 		 */
 		NSArray *array = (NSArray *)[configuration valueForKeyPath:@"_Array"];
-		return [array count];
+		NSArray *extra = (NSArray *)[configuration valueForKeyPath:@"_Extra"];
+		return [array count] + [extra count];
 	} else {
 		return [(NSArray *)configuration count];
 	}
