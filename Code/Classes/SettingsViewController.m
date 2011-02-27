@@ -80,6 +80,7 @@
  */
 
 - (void)viewWillDisappear:(BOOL)animated {
+	[self.view endEditing:YES];
 	[super viewWillDisappear:animated];
 	[settingsdatasource save];
 }
