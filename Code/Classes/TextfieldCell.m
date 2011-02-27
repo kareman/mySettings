@@ -108,7 +108,7 @@
 
 - (void) setValue:(NSObject *)newvalue {
 	super.value = newvalue;
-	valuetextfield.text = (NSString *) self.value;
+	valuetextfield.text = [self.value respondsToSelector:@selector(stringValue)] ? (NSString *) [self.value performSelector:@selector(stringValue)] : (NSString *) self.value;
 }
 
 #pragma mark Text Field Delegate Methods
